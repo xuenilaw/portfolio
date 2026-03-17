@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>PoC Project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+
+            <!-- Dropdown ME -->
+            <div class="dropdown">
+                <button class="dropbtn">Me ▾</button>
+                <div class="dropdown-content">
+                    <a href="index.html#about" data-de="Über mich" data-en="About">About</a>
+                    <a href="index.html#experience" data-de="Beruferfahrung" data-en="" Experience">Experience</a>
+                    <a href="index.html#skills" data-de="Fähigkeiten" data-en="Skills">Skills</a>
+                    <a href="index.html#contact" data-de="Kontakt" data-en="Contact">Contact</a>
+                </div>
+            </div>
+
+            <!-- Dropdown PROJECT -->
+            <div class="dropdown">
+                <button class="dropbtn">Projekt ▾</button>
+                <div class="dropdown-content">
+                    <a href="ai-tool.html" data-de="AI Tool" data-en="AI Tool">AI Tool</a>
+                    <a href="poc.html" data-de="PoC" data-en="PoC">PoC</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Language Switch -->
+        <div class="lang-switch">
+            <button onclick="setLanguage('de')">DE</button>
+            <button onclick="setLanguage('en')">EN</button>
+        </div>
+    </nav>
+    <section>
+        <h1>Proof of Concept</h1>
+        <h3>PoC #1 : Appium Test Automation in Android Automotive</h3>
+        <p data-de="Dieses Proof-of-Concept demonstriert Appium automatisierte UI Tests ..."
+            data-en="This proof of concept demonstrates Appium automated UI testing...">
+            Beschreibung deines PoC Projekts</p>
+        <div class="video-container">
+            <video controls width="100%">
+                <source src="video/UI_TA_Appium_Demo_AndroidA.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        
+        <a href="index.html">← Back</a>
+    </section>
+    <script src="script.js"></script>
+</body>
+
+</html>
