@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>PoC Project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+
+            <!-- Dropdown ME -->
+            <div class="dropdown">
+                <button class="dropbtn">Me ▾</button>
+                <div class="dropdown-content">
+                    <a href="index.html#about" data-de="Über mich" data-en="About">About</a>
+                    <a href="index.html#experience" data-de="Beruferfahrung" data-en="Experience">Experience</a>
+                    <a href="index.html#skills" data-de="Fähigkeiten" data-en="Skills">Skills</a>
+                    <a href="index.html#contact" data-de="Kontakt" data-en="Contact">Contact</a>
+                </div>
+            </div>
+
+            <!-- Dropdown PROJECT -->
+            <div class="dropdown">
+                <button class="dropbtn">Projekt ▾</button>
+                <div class="dropdown-content">
+                    <a href="ai-tool.html" data-de="AI Tool" data-en="AI Tool">AI Tool</a>
+                    <a href="poc.html" data-de="PoC Appium" data-en="PoC Appium">PoC Appium</a>
+                    <a href="poc_rf.html" data-de="PoC Robot Framework" data-en="PoC Robot Framework">PoC Robot Framework</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Language Switch -->
+        <div class="lang-switch">
+            <button onclick="setLanguage('de')">DE</button>
+            <button onclick="setLanguage('en')">EN</button>
+        </div>
+    </nav>
+    <section>
+        <h1>Proof of Concept - Robot Framework + Selenium TA</h1>
+        
+        <p data-de="Dieses Proof-of-Concept demonstriert Robot Framework automatisierte UI Tests mit Selenium Library ..."
+            data-en="This proof of concept demonstrates Robot Framework automated UI testing with Selenium Library...">
+            Beschreibung deines PoC Projekts</p>
+        <div class="video-container">
+            <video controls width="100%">
+                <source src="video/RF_Map_Demo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <a href="index.html">← Back</a>
+    </section>
+    <script src="script.js"></script>
+</body>
+
+</html>
