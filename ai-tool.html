@@ -1,47 +1,101 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>AI Tool Project</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <nav class="navbar">
-    <div class="nav-left">
+        <div class="nav-left">
 
-        <!-- Dropdown ME -->
-        <div class="dropdown">
-            <button class="dropbtn">Me ▾</button>
-            <div class="dropdown-content">
-                <a href="index.html#about" data-de="Über mich" data-en="About">About</a>
-                <a href="index.html#experience" data-de="Beruferfahrung" data-en="Experience">Experience</a>
-                <a href="index.html#skills" data-de="Fähigkeiten" data-en="Skills" >Skills</a>
-                <a href="index.html#contact" data-de="Kontakt" data-en="Contact">Contact</a>
+            <!-- Dropdown ME -->
+            <div class="dropdown">
+                <button class="dropbtn">Me ▾</button>
+                <div class="dropdown-content">
+                    <a href="index.html#about" data-de="Über mich" data-en="About">About</a>
+                    <a href="index.html#experience" data-de="Beruferfahrung" data-en="Experience">Experience</a>
+                    <a href="index.html#skills" data-de="Fähigkeiten" data-en="Skills">Skills</a>
+                    <a href="index.html#contact" data-de="Kontakt" data-en="Contact">Contact</a>
+                </div>
             </div>
+
+            <!-- Dropdown PROJECT -->
+            <div class="dropdown">
+                <button class="dropbtn">Projekt ▾</button>
+                <div class="dropdown-content">
+                    <a href="ai-tool.html" data-de="AI Tool" data-en="AI Tool">AI Tool</a>
+                    <a href="poc.html" data-de="PoC Appium" data-en="PoC Appium">PoC Appium</a>
+                    <a href="poc_rf.html" data-de="PoC Robot Framework" data-en="PoC Robot Framework">PoC Robot
+                        Framework</a>
+                </div>
+            </div>
+
         </div>
 
-        <!-- Dropdown PROJECT -->
-        <div class="dropdown">
-            <button class="dropbtn">Projekt ▾</button>
-            <div class="dropdown-content">
-                <a href="ai-tool.html" data-de="AI Tool" data-en="AI Tool">AI Tool</a>
-                <a href="poc.html" data-de="PoC" data-en="PoC">PoC</a>
-                <a href="poc_rf.html" data-de="PoC Robot Framework" data-en="PoC Robot Framework">PoC Robot Framework</a>
-            </div>
+        <!-- Language Switch -->
+        <div class="lang-switch">
+            <button onclick="setLanguage('de')">DE</button>
+            <button onclick="setLanguage('en')">EN</button>
         </div>
-
-    </div>
-
-    <!-- Language Switch -->
-    <div class="lang-switch">
-        <button onclick="setLanguage('de')">DE</button>
-        <button onclick="setLanguage('en')">EN</button>
-    </div>
-</nav>
+    </nav>
     <section>
-        <h1>AI Tool</h1>
-        <p>To be implemented...</p>
+        <h1>AI-Driven Automation Test</h1>
+        <h2>Overview - High-level verification of user experience and visual integrity.</h2>
+        <li>
+            <strong data-de="Das Problem:" data-en="The Problem:">
+                Das Problem:
+            </strong>
+
+            <span
+                data-de=" In der modernen agilen Softwareentwicklung übersteigt die Geschwindigkeit der Iterationen oft die Kapazität traditioneller Testautomatisierung. Herkömmliche Tools wie Selenium verlassen sich auf starre Selektoren (IDs/XPath), die bei schnellen Designänderungen leicht brechen und somit einen hohen Wartungsaufwand verursachen."
+                data-en=" In modern agile development, the speed of software iteration often outpaces the capacity of traditional automation. Conventional tools like Selenium rely heavily on brittle element locators (IDs/XPath), which frequently break when UI requirements change rapidly, leading to high maintenance costs.">
+                In der modernen agilen Softwareentwicklung übersteigt die Geschwindigkeit der Iterationen oft die
+                Kapazität traditioneller Testautomatisierung. Herkömmliche Tools wie Selenium verlassen sich auf starre
+                Selektoren (IDs/XPath), die bei schnellen Designänderungen leicht brechen und somit einen hohen
+                Wartungsaufwand verursachen.
+            </span>
+        </li>
+        <li>
+            <strong data-de="Die Lösung:" data-en="The Solution:">
+                Die Lösung:
+            </strong>
+
+            <span
+                data-de="Dieses Projekt präsentiert einen visionsbasierten Automatisierungsansatz. Durch die Nutzung der Claude 3.5 Vision API „sieht“ der Agent den Bildschirm wie ein menschlicher Tester. Er identifiziert UI-Komponenten durch Objekterkennung statt durch den zugrunde liegenden Code, wodurch die Testsuite wesentlich resistenter gegen UI-Änderungen wird."
+                data-en="This project introduces a Vision-based Automation approach. By leveraging the Claude 3.5
+            Vision API, the agent sees the screen just like a human tester. It identifies UI components through object
+            detection rather than underlying code, making the test suite significantly more resilient to UI changes.">
+                Dieses Projekt präsentiert einen visionsbasierten Automatisierungsansatz. Durch die Nutzung der Claude 3.5 Vision API „sieht“ der Agent den Bildschirm wie ein menschlicher Tester. Er identifiziert UI-Komponenten durch Objekterkennung statt durch den zugrunde liegenden Code, wodurch die Testsuite wesentlich resistenter gegen UI-Änderungen wird.
+            </span>
+        </li>
+        <li>
+            <strong data-de="Zukunftsausblick:" data-en="Future Roadmap:">
+                Zukunftsausblick:
+            </strong>
+
+            <span
+                data-en="This project introduces a Vision-based Automation approach. By leveraging the Claude 3.5
+            Vision API, the agent sees the screen just like a human tester. It identifies UI components through object
+            detection rather than underlying code, making the test suite significantly more resilient to UI changes."
+                data-de="Obwohl die aktuelle visuelle Erkennung von LLMs große Flexibilität bietet, kann sie gelegentlich instabil sein. Um eine industrielle Stabilität zu erreichen, wird in der nächsten Phase die Integration von selbst trainierten Bilderkennungsbibliotheken angestrebt. Das ultimative Ziel ist die Implementierung von „Vibe Testing“, einer autonomen, ganzheitlichen Überprüfung der Benutzererfahrung und visuellen Integrität">
+                Dieses Projekt präsentiert einen visionsbasierten Automatisierungsansatz. Durch die Nutzung der Claude 3.5 Vision API „sieht“ der Agent den Bildschirm wie ein menschlicher Tester. Er identifiziert UI-Komponenten durch Objekterkennung statt durch den zugrunde liegenden Code, wodurch die Testsuite wesentlich resistenter gegen UI-Änderungen wird.
+            </span>
+        </li>
+        
+        <h2>AI-Agent Automation Workflow</h2>
+        <p>Telegram -> AI agent -> Test Automation -> Result Feedback -> Telegram</p>
+        <img src="assets/ai_hil_test_pipeline.svg" alt="AI Agent Automation Workflow" class="workflow-img">
+
+
+        <h2>Demo Video</h2>
+        
+        <p>To be edited... </p>
+
         <a href="index.html">← Back</a>
     </section>
     <script src="script.js"></script>
 </body>
+
 </html>

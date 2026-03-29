@@ -5,6 +5,13 @@ body {
     color: white;
 }
 
+.workflow-img {
+    width: 100%;
+    max-width: 900px;
+    margin: 20px auto;
+    display: block;
+}
+
 /* NAVBAR */
 .navbar {
     display: flex;
