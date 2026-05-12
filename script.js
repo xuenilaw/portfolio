@@ -40,7 +40,7 @@ function setLanguage(lang) {
 // LOAD DEFAULT LANGUAGE
 document.addEventListener("DOMContentLoaded", function () {
 
-    const savedLang = localStorage.getItem("language") || "de";
+    const savedLang = localStorage.getItem("language") || "en";
     setLanguage(savedLang);
 
 });
