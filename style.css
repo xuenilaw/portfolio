@@ -1,8 +1,92 @@
 body {
     margin: 0;
     font-family: "Segoe UI", sans-serif;
-    background: #111;
-    color: white;
+    min-height: 100vh;
+    background: #030014;
+    color: #f8f7ff;
+}
+
+body > :not(.galaxy-background):not(.navbar) {
+    position: relative;
+    z-index: 1;
+}
+
+.galaxy-background {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 16% 22%, rgba(126, 105, 220, 0.34), transparent 32%),
+        radial-gradient(circle at 82% 68%, rgba(62, 125, 220, 0.28), transparent 38%),
+        #030014;
+}
+
+.galaxy-background::before {
+    content: "";
+    position: absolute;
+    inset: -5%;
+    background:
+        linear-gradient(to bottom, rgba(3, 0, 20, 0.02) 0%, rgba(3, 0, 20, 0.12) 58%, rgba(3, 0, 20, 0.48) 100%),
+        url("assets/background/milky-way.jpg") center top / cover no-repeat;
+    filter: brightness(1.28) saturate(1.12);
+    opacity: 0.9;
+}
+
+.galaxy-background::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 0%, rgba(3, 0, 20, 0.06) 45%, rgba(3, 0, 20, 0.28) 100%);
+}
+
+.galaxy-stars {
+    position: absolute;
+    inset: -80px;
+    background-repeat: repeat;
+    pointer-events: none;
+}
+
+.galaxy-stars--far {
+    background-image:
+        radial-gradient(1px 1px at 25px 35px, rgba(255, 255, 255, 0.82), transparent),
+        radial-gradient(1px 1px at 130px 90px, rgba(225, 235, 255, 0.65), transparent),
+        radial-gradient(1px 1px at 240px 170px, rgba(255, 255, 255, 0.72), transparent),
+        radial-gradient(1px 1px at 450px 230px, rgba(255, 255, 255, 0.68), transparent);
+    background-size: 620px 320px;
+    animation: galaxy-drift 140s linear infinite;
+}
+
+.galaxy-stars--mid {
+    background-image:
+        radial-gradient(1.4px 1.4px at 70px 80px, rgba(255, 255, 255, 0.96), transparent),
+        radial-gradient(1.2px 1.2px at 190px 150px, rgba(215, 230, 255, 0.92), transparent),
+        radial-gradient(1.5px 1.5px at 310px 65px, rgba(255, 255, 255, 0.94), transparent),
+        radial-gradient(1.2px 1.2px at 430px 210px, rgba(255, 246, 220, 0.9), transparent),
+        radial-gradient(1.4px 1.4px at 550px 275px, rgba(255, 255, 255, 0.95), transparent);
+    background-size: 590px 310px;
+    animation: galaxy-drift 100s linear infinite reverse;
+}
+
+.galaxy-stars--near {
+    background-image:
+        radial-gradient(1.6px 1.6px at 45px 55px, white, transparent),
+        radial-gradient(1.2px 1.2px at 170px 125px, rgba(255, 250, 235, 0.98), transparent),
+        radial-gradient(1.5px 1.5px at 370px 185px, rgba(220, 235, 255, 0.95), transparent),
+        radial-gradient(2px 2px at 500px 110px, rgba(255, 255, 255, 0.98), transparent);
+    background-size: 540px 280px;
+    animation: star-twinkle 5s ease-in-out infinite;
+}
+
+.galaxy-stars--bright {
+    background-image:
+        radial-gradient(circle at 110px 90px, white 0 1.5px, rgba(205, 225, 255, 0.48) 2px, transparent 5px),
+        radial-gradient(circle at 340px 220px, white 0 1.8px, rgba(255, 238, 195, 0.44) 2.4px, transparent 6px),
+        radial-gradient(circle at 610px 145px, white 0 1.4px, rgba(210, 225, 255, 0.48) 2px, transparent 5px),
+        radial-gradient(circle at 730px 310px, white 0 1.6px, rgba(255, 255, 255, 0.42) 2.2px, transparent 5px);
+    background-size: 780px 380px;
+    animation: star-twinkle 3.8s ease-in-out infinite reverse;
 }
 
 .workflow-img {
@@ -18,7 +102,11 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 15px 40px;
-    background: #000;
+    background: rgba(3, 0, 20, 0.66);
+    border-bottom: 1px solid rgba(218, 208, 255, 0.18);
+    box-shadow: 0 12px 35px rgba(3, 0, 20, 0.22);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
     position: fixed;
     top: 0;
     left: 0;
@@ -35,8 +123,9 @@ body {
 }
 
 .lang-switch button {
-    background: none;
-    border: 1px solid white;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 999px;
     color: white;
     padding: 5px 10px;
     cursor: pointer;
@@ -96,10 +185,14 @@ li {
     position: absolute;
     top: 30px;
     left: 0;
-    background: #222;
+    background: rgba(12, 8, 35, 0.92);
+    border: 1px solid rgba(218, 208, 255, 0.22);
+    box-shadow: 0 18px 45px rgba(3, 0, 20, 0.45);
+    backdrop-filter: blur(18px);
     min-width: 180px;
     border-radius: 6px;
     overflow: hidden;
+    z-index: 1100;
 }
 
 .dropdown-content a {
@@ -110,7 +203,7 @@ li {
 }
 
 .dropdown-content a:hover {
-    background: #333;
+    background: rgba(170, 145, 255, 0.2);
 }
 
 .dropdown.active .dropdown-content {
@@ -125,9 +218,47 @@ li {
     animation: fadeIn 1.5s ease-in-out;
 }
 
+.hero h1 {
+    margin-bottom: 18px;
+    font-size: clamp(2.3rem, 5vw, 4.6rem);
+    line-height: 1.08;
+    text-shadow: 0 4px 28px rgba(3, 0, 20, 0.75);
+}
+
+.hero p {
+    max-width: 920px;
+    margin: 0 auto;
+    color: rgba(244, 241, 255, 0.86);
+    font-size: 1.08rem;
+    line-height: 1.7;
+}
+
 section {
+    max-width: 1180px;
+    margin: 24px auto;
     padding: 80px 40px;
-    border-bottom: 1px solid #333;
+    scroll-margin-top: 84px;
+    border: 1px solid rgba(218, 208, 255, 0.17);
+    border-radius: 24px;
+    box-sizing: border-box;
+    background: rgba(8, 6, 28, 0.27);
+    box-shadow: 0 24px 70px rgba(3, 0, 20, 0.22);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+}
+
+.navbar + section {
+    margin-top: 100px;
+}
+
+section h1,
+section h2,
+section h3 {
+    text-shadow: 0 2px 16px rgba(3, 0, 20, 0.72);
+}
+
+a {
+    color: #d9ceff;
 }
 
 /* Buttons */
@@ -153,11 +284,11 @@ section {
 }
 
 .skill-card {
-    background: #1a1a1a;
+    background: linear-gradient(145deg, rgba(31, 23, 66, 0.48), rgba(8, 6, 28, 0.32));
     padding: 25px;
     border-radius: 10px;
     transition: 0.3s ease;
-    border: 1px solid #333;
+    border: 1px solid rgba(218, 208, 255, 0.2);
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 1s forwards;
@@ -165,7 +296,8 @@ section {
 
 .skill-card:hover {
     transform: translateY(-5px);
-    border-color: white;
+    border-color: rgba(225, 216, 255, 0.72);
+    box-shadow: 0 16px 42px rgba(73, 45, 145, 0.28);
 }
 
 /* Animation */
@@ -187,6 +319,33 @@ section {
     }
 }
 
+@keyframes galaxy-drift {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+
+    to {
+        transform: translate3d(-100px, -60px, 0);
+    }
+}
+
+@keyframes star-twinkle {
+    0%,
+    100% {
+        opacity: 0.55;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .galaxy-stars {
+        animation: none;
+    }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .navbar {
@@ -198,6 +357,8 @@ section {
     }
 
     section {
-        padding: 60px 20px;
+        margin: 14px 12px;
+        padding: 52px 20px;
+        border-radius: 18px;
     }
 }
