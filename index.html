@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Automotive Test Engineer</title>
-    <link rel="stylesheet" href="style.css?v=20260611">
+    <link rel="stylesheet" href="style.css?v=20260814">
 </head>
 
 <body>
@@ -389,11 +389,70 @@ kontinuierlicher Testaktivitäten."
 
     <section id="contact">
         <h2 data-de="Kontakt" data-en="Contact">Kontakt</h2>
-        <p>Email: yhnm_88@hotmail.com</p>
-        <p>Telephone: +49 152 25821065</p>
+        <div class="contact-layout">
+            <div class="contact-intro">
+                <p
+                    data-de="Haben Sie Interesse an einer Zusammenarbeit, einer Testautomatisierungs-Idee oder einem Automotive-Testprojekt? Schreiben Sie mir gern eine kurze Nachricht."
+                    data-en="Interested in collaboration, a test automation idea, or an automotive testing project? Send me a short message.">
+                    Haben Sie Interesse an einer Zusammenarbeit, einer Testautomatisierungs-Idee oder einem
+                    Automotive-Testprojekt? Schreiben Sie mir gern eine kurze Nachricht.
+                </p>
+                <p
+                    class="contact-note"
+                    data-de="Das Formular öffnet Ihr E-Mail-Programm mit einer vorbereiteten Nachricht."
+                    data-en="The form opens your email app with a prepared message.">
+                    Das Formular öffnet Ihr E-Mail-Programm mit einer vorbereiteten Nachricht.
+                </p>
+            </div>
+
+            <form class="contact-form" id="contact-form">
+                <label for="contact-name" data-de="Name" data-en="Name">Name</label>
+                <input
+                    id="contact-name"
+                    name="name"
+                    type="text"
+                    autocomplete="name"
+                    required
+                    data-placeholder-de="Ihr Name"
+                    data-placeholder-en="Your name"
+                    placeholder="Ihr Name">
+
+                <label for="contact-email" data-de="E-Mail" data-en="Email">E-Mail</label>
+                <input
+                    id="contact-email"
+                    name="email"
+                    type="email"
+                    autocomplete="email"
+                    required
+                    data-placeholder-de="ihre.email@example.com"
+                    data-placeholder-en="your.email@example.com"
+                    placeholder="ihre.email@example.com">
+
+                <label for="contact-message" data-de="Nachricht" data-en="Message">Nachricht</label>
+                <textarea
+                    id="contact-message"
+                    name="message"
+                    rows="6"
+                    required
+                    data-placeholder-de="Worum geht es?"
+                    data-placeholder-en="What would you like to discuss?"
+                    placeholder="Worum geht es?"></textarea>
+
+                <button class="btn contact-submit" type="submit" data-de="Nachricht senden" data-en="Send message">
+                    Nachricht senden
+                </button>
+                <p
+                    class="form-status"
+                    id="contact-status"
+                    data-de="Bitte füllen Sie alle Felder aus."
+                    data-en="Please complete all fields.">
+                    Bitte füllen Sie alle Felder aus.
+                </p>
+            </form>
+        </div>
     </section>
 
-    <script src="script.js?v=20260611"></script>
+    <script src="script.js?v=20260814"></script>
 </body>
 
 </html>

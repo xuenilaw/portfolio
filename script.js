@@ -50,6 +50,10 @@ function setLanguage(lang) {
         }
     });
 
+    document.querySelectorAll(`[data-placeholder-${lang}]`).forEach(el => {
+        el.setAttribute("placeholder", el.getAttribute(`data-placeholder-${lang}`));
+    });
+
     document.documentElement.lang = lang;
 }
 
@@ -74,3 +78,36 @@ window.addEventListener("load", function () {
         requestAnimationFrame(() => target.scrollIntoView());
     }
 });
+
+// CONTACT FORM
+const contactForm = document.getElementById("contact-form");
+const contactStatus = document.getElementById("contact-status");
+
+if (contactForm) {
+    contactForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        if (!contactForm.checkValidity()) {
+            contactStatus.style.display = "block";
+            contactForm.reportValidity();
+            return;
+        }
+
+        contactStatus.style.display = "none";
+
+        const formData = new FormData(contactForm);
+        const senderName = formData.get("name").trim();
+        const senderEmail = formData.get("email").trim();
+        const message = formData.get("message").trim();
+        const recipient = ["yhnm_88", "hotmail.com"].join("@");
+        const subject = `Portfolio contact from ${senderName}`;
+        const body = [
+            `Name: ${senderName}`,
+            `Email: ${senderEmail}`,
+            "",
+            message
+        ].join("\n");
+
+        window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    });
+}
