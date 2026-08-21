@@ -41,6 +41,38 @@ body > :not(.galaxy-background):not(.navbar) {
     background: linear-gradient(to bottom, transparent 0%, rgba(3, 0, 20, 0.06) 45%, rgba(3, 0, 20, 0.28) 100%);
 }
 
+.galaxy-portrait {
+    position: absolute;
+    top: clamp(74px, 9vw, 118px);
+    right: clamp(-34px, -1.6vw, -12px);
+    width: clamp(136px, 21.6vw, 288px);
+    aspect-ratio: 312 / 381;
+    pointer-events: none;
+    transform: rotate(2deg);
+}
+
+.galaxy-portrait::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("assets/background/star-portrait.png") center / contain no-repeat;
+    filter: brightness(1.35) contrast(1.18) saturate(0.92);
+    mix-blend-mode: screen;
+    opacity: 0.42;
+    mask-image: radial-gradient(ellipse at 55% 42%, black 0%, rgba(0, 0, 0, 0.86) 31%, rgba(0, 0, 0, 0.34) 48%, transparent 69%);
+    -webkit-mask-image: radial-gradient(ellipse at 55% 42%, black 0%, rgba(0, 0, 0, 0.86) 31%, rgba(0, 0, 0, 0.34) 48%, transparent 69%);
+}
+
+.galaxy-portrait::after {
+    content: "";
+    position: absolute;
+    inset: -18%;
+    background:
+        radial-gradient(circle at 56% 35%, rgba(210, 220, 255, 0.15), transparent 38%),
+        radial-gradient(ellipse at 55% 48%, rgba(63, 83, 175, 0.12), transparent 56%);
+    mix-blend-mode: screen;
+}
+
 .galaxy-stars {
     position: absolute;
     inset: -80px;
@@ -440,6 +472,17 @@ a {
 
 /* Responsive */
 @media (max-width: 768px) {
+    .galaxy-portrait {
+        top: 92px;
+        right: -26px;
+        width: min(38vw, 152px);
+        transform: rotate(2deg);
+    }
+
+    .galaxy-portrait::before {
+        opacity: 0.24;
+    }
+
     .navbar {
         padding: 15px 20px;
     }

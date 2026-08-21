@@ -3,6 +3,7 @@ const galaxyBackground = document.createElement("div");
 galaxyBackground.className = "galaxy-background";
 galaxyBackground.setAttribute("aria-hidden", "true");
 galaxyBackground.innerHTML = `
+    <div class="galaxy-portrait galaxy-portrait--future-chat"></div>
     <div class="galaxy-stars galaxy-stars--far"></div>
     <div class="galaxy-stars galaxy-stars--mid"></div>
     <div class="galaxy-stars galaxy-stars--near"></div>
