@@ -151,6 +151,7 @@ body > :not(.galaxy-background):not(.navbar) {
 
 .lang-switch {
     display: flex;
+    align-items: center;
     gap: 10px;
 }
 
@@ -162,6 +163,33 @@ body > :not(.galaxy-background):not(.navbar) {
     padding: 5px 10px;
     cursor: pointer;
 }
+
+.linkedin-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 31px;
+    height: 31px;
+    box-sizing: border-box;
+    color: white;
+    background: #0a66c2;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.linkedin-link:hover,
+.linkedin-link:focus-visible {
+    background: #004182;
+    transform: translateY(-1px);
+}
+
+.linkedin-link svg {
+    width: 21px;
+    height: 21px;
+    fill: currentColor;
+}
+
 .experience-item {
     margin-bottom: 60px;
 }
