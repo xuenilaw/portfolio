@@ -272,9 +272,9 @@ li {
 
 /* HERO */
 .hero {
-    margin-top: 120px;
+    margin-top: 92px;
     text-align: center;
-    padding: 100px 20px;
+    padding: 72px 20px 88px;
     animation: fadeIn 1.5s ease-in-out;
 }
 
@@ -306,6 +306,43 @@ li {
     color: rgba(244, 241, 255, 0.86);
     font-size: 1.08rem;
     line-height: 1.7;
+}
+
+.hero-intro {
+    text-shadow: 0 4px 24px rgba(3, 0, 20, 0.78);
+}
+
+.hero-skill-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    width: min(980px, calc(100% - 32px));
+    margin: 26px auto 0;
+}
+
+.hero-skill-card {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 0;
+    padding: 8px 14px;
+    border: 1px solid rgba(226, 218, 255, 0.28);
+    border-radius: 999px;
+    color: rgba(255, 255, 255, 0.94);
+    background:
+        radial-gradient(circle at 20% 18%, rgba(255, 255, 255, 0.12), transparent 34%),
+        rgba(24, 18, 58, 0.52);
+    box-shadow:
+        0 10px 26px rgba(3, 0, 20, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+    font-size: 0.92rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+    text-align: center;
 }
 
 section {
@@ -697,6 +734,30 @@ a {
 
     .nav-left {
         gap: 10px;
+    }
+
+    .hero {
+        margin-top: 78px;
+        padding: 42px 16px 56px;
+    }
+
+    .hero-name {
+        font-size: clamp(3.1rem, 15vw, 4.8rem);
+    }
+
+    .hero h1 {
+        font-size: clamp(1.18rem, 5vw, 1.7rem);
+    }
+
+    .hero-skill-grid {
+        gap: 8px;
+        width: 100%;
+        margin-top: 22px;
+    }
+
+    .hero-skill-card {
+        padding: 7px 11px;
+        font-size: 0.82rem;
     }
 
     section {
