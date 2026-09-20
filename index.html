@@ -4,429 +4,288 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Automotive Test Engineer</title>
-    <link rel="stylesheet" href="style.css?v=20260915b">
+    <title data-de="Xueni Law | Automotive-Tests" data-en="Xueni Law | Automotive testing">Xueni Law | Automotive-Tests</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=2">
+    <link rel="stylesheet" href="style.css?v=20260920-name">
 </head>
 
 <body>
+    <a class="skip-link" href="#main-content" data-de="Zum Inhalt springen" data-en="Skip to content">Zum Inhalt springen</a>
 
-    <nav class="navbar">
+    <nav class="navbar portfolio-nav" aria-label="Hauptnavigation" data-aria-label-de="Hauptnavigation" data-aria-label-en="Main navigation">
         <div class="nav-left">
-
-            <!-- Dropdown ME -->
-            <div class="dropdown">
-                <button class="dropbtn">Me ▾</button>
-                <div class="dropdown-content">
-                    <a href="index.html#about" data-de="Über mich" data-en="About">About</a>
-                    <a href="index.html#experience" data-de="Berufserfahrung" data-en="Experience">Experience</a>
-                    <a href="index.html#skills" data-de="Fähigkeiten" data-en="Skills">Skills</a>
-                    <a href="index.html#contact" data-de="Kontakt" data-en="Contact">Contact</a>
-                </div>
-            </div>
-
-            <!-- Dropdown PROJECT -->
-            <div class="dropdown">
-                <button class="dropbtn">Projekt ▾</button>
-                <div class="dropdown-content">
-                    <a href="ai-test.html" data-de="AI-Test" data-en="AI-Test">AI-Test</a>
-                    <a href="poc_rf.html" data-de="PoC Robot Framework" data-en="PoC Robot Framework">PoC Robot Framework</a>
-                </div>
-            </div>
-
+            <a href="index.html#projects" data-de="Projekte" data-en="Projects">Projekte</a>
+            <a href="index.html#experience" data-de="Berufserfahrung" data-en="Experience">Berufserfahrung</a>
+            <a href="index.html#skills" data-de="Fähigkeiten" data-en="Skills">Fähigkeiten</a>
+            <a href="index.html#about" data-de="Über mich" data-en="About">Über mich</a>
+            <a href="index.html#contact" data-de="Kontakt" data-en="Contact">Kontakt</a>
         </div>
 
         <!-- Language Switch -->
         <div class="lang-switch">
-            <button id="btn-de" onclick="setLanguage('de')">DE</button>
-            <button id="btn-en" onclick="setLanguage('en')">EN</button>
+            <button id="btn-de" data-language="de" aria-pressed="true" onclick="setLanguage('de')">DE</button>
+            <button id="btn-en" data-language="en" aria-pressed="false" onclick="setLanguage('en')">EN</button>
             <a class="linkedin-link" href="https://www.linkedin.com/in/xue-ni-law-9b57a183/" target="_blank"
-                rel="noopener noreferrer" aria-label="LinkedIn profile" title="LinkedIn">
+                rel="noopener noreferrer" aria-label="LinkedIn-Profil" data-aria-label-de="LinkedIn-Profil" data-aria-label-en="LinkedIn profile" title="LinkedIn">
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M6.5 8.3H3.2V19h3.3V8.3ZM4.9 3A1.9 1.9 0 1 0 5 6.8 1.9 1.9 0 0 0 4.9 3ZM19 12.9c0-3.2-1.7-4.9-4.1-4.9a3.6 3.6 0 0 0-3.3 1.8V8.3H8.3V19h3.3v-5.3c0-1.4.3-2.8 2.1-2.8 1.8 0 1.9 1.7 1.9 2.9V19H19v-6.1Z"/>
                 </svg>
             </a>
         </div>
     </nav>
+    <main id="main-content" tabindex="-1">
 
-    <header class="hero">
-        <p class="hero-name">Xueni Law</p>
-        <h1>System Test Engineer and Coordinator (Automotive)</h1>
-        <p
-            class="hero-intro"
-            data-de="Ich verbinde Automotive-Systemtests, Fahrzeugvalidierung und Testkoordination mit wachsender Expertise in KI-Agenten und Testautomatisierung."
-            data-en="I connect automotive system testing, vehicle validation, and test coordination with growing expertise in AI agents and test automation.">
-            Ich verbinde Automotive-Systemtests, Fahrzeugvalidierung und Testkoordination mit wachsender Expertise in KI-Agenten und Testautomatisierung.
-        </p>
-        <div class="hero-skill-grid" aria-label="Core portfolio skills">
-            <span class="hero-skill-card" data-de="In-Vehicle-Infotainment" data-en="In-Vehicle Infotainment">In-Vehicle-Infotainment</span>
-            <span class="hero-skill-card" data-de="Navigation" data-en="Navigation">Navigation</span>
-            <span class="hero-skill-card" data-de="System-V&amp;V-Test" data-en="System V&amp;V Test">System-V&amp;V-Test</span>
-            <span class="hero-skill-card" data-de="ADAS/AD Test" data-en="ADAS/AD Test">ADAS/AD Test</span>
-            <span class="hero-skill-card" data-de="KI-Agent" data-en="AI-Agent">KI-Agent</span>
-            <span class="hero-skill-card" data-de="Automatisierung" data-en="Automation">Automatisierung</span>
+    <header class="hero portfolio-hero">
+        <p class="eyebrow" data-de="Verifikation &amp; Validierung · Testautomatisierung" data-en="Verification &amp; Validation · Test automation">Verifikation &amp; Validierung · Testautomatisierung</p>
+        <h1 class="hero-name">XueNi LAW</h1>
+        <p class="hero-value" data-de="Ich verbinde Erfahrung in Fahrzeugtests mit KI-gestützter Testautomatisierung." data-en="I bring automotive testing experience to AI-driven test automation.">Ich verbinde Erfahrung in Fahrzeugtests mit KI-gestützter Testautomatisierung.</p>
+        <ul class="hero-chips" aria-label="Schwerpunkte" data-aria-label-de="Schwerpunkte" data-aria-label-en="Focus areas">
+            <li>IVI</li>
+            <li>Navigation</li>
+            <li>ADAS</li>
+            <li data-de="KI-Agenten" data-en="AI agents">KI-Agenten</li>
+            <li>Robot Framework</li>
+            <li>Selenium</li>
+        </ul>
+        <div class="hero-actions">
+            <a class="portfolio-button portfolio-button--primary" href="ai-test.html" data-de="KI-Projekt ansehen" data-en="View AI project">KI-Projekt ansehen</a>
         </div>
+        <dl class="hero-stats">
+            <div><dt data-de="Jahre Automotive-Erfahrung" data-en="Years in automotive testing">Jahre Automotive-Erfahrung</dt><dd>8+</dd></div>
+            <div><dt data-de="Sprachen" data-en="Languages">Sprachen</dt><dd>4</dd></div>
+            <div><dt data-de="Zertifiziertes Testmanagement" data-en="Certified test management">Zertifiziertes Testmanagement</dt><dd>ISTQB Advanced</dd></div>
+        </dl>
     </header>
 
-    <section id="about">
-        <h2 data-de="Über mich" data-en="About Me">Über mich</h2>
-        <p data-de="Erfahrene Testingenieurin und Testkoordinatorin mit über 8 Jahren Expertise in der
-Automobilindustrie (Navigation, Infotainment, Telematik und ADAS). Zertifizierte ISTQB Test
-Managerin (Advanced Level) mit fundierten Kenntnissen in der Testautomatisierung, dem
-Risikomanagement und der Leitung internationaler SCRUM-Testprojekte. Ausgezeichnet mit dem
-DAAD-Preis für herausragende Leistungen. Aktuell erweitere ich mein Profil aktiv in Richtung KI und Testautomatisierung — mit abgeschlossenen Kursen in Machine Learning, AWS und KI-Grundlagen sowie praktischen Experimenten mit YOLO-basierter Bilderkennung für zukünftige Testautomatisierung." data-en="Senior System Test Engineer and Coordinator with 8+ years of experience in automotive
-infotainment, navigation, telematics and ADAS systems. Certified ISTQB Test Manager (Advanced
-Level) with in-depth knowledge of test automation, risk management and leading international agile
-or SCRUM test projects. Fluent in 4 languages, professional working proficiency in English, Chinese, German and
-Malay. Recipient of the DAAD Prize for outstanding achievements. I am actively expanding into AI and test automation — with completed training in Machine Learning, AWS fundamentals, and AI, plus hands-on experimentation with YOLO-based image recognition for future automation use cases.">
-            Erfahrene Testingenieurin im Automotive-Bereich mit Fokus auf IVI und Navigation.
-    </p>
+    <section id="projects" aria-labelledby="projects-heading">
+        <p class="eyebrow" data-de="Praktische Arbeit" data-en="Hands-on work">Praktische Arbeit</p><h2 id="projects-heading" data-de="Projekte" data-en="Projects">Projekte</h2>
+        <article class="project-card project-card--featured" aria-labelledby="ai-project-title">
+            <div class="project-card-top"><p class="eyebrow" data-de="Im Fokus" data-en="Featured">Im Fokus</p><span class="project-status" data-de="Prototyp · in Entwicklung" data-en="Prototype · in development">Prototyp · in Entwicklung</span></div>
+            <h3 id="ai-project-title" data-de="KI-gestützter HIL-Testagent" data-en="AI-driven HIL test agent">KI-gestützter HIL-Testagent</h3><p class="project-outcome" data-de="Der Prototyp verbindet einen Telegram-Auftrag mit visueller UI-Steuerung und einer automatisierten Ergebnisrückmeldung." data-en="The prototype connects a Telegram request to visual UI control and automated result feedback.">Der Prototyp verbindet einen Telegram-Auftrag mit visueller UI-Steuerung und einer automatisierten Ergebnisrückmeldung.</p><ul class="project-chips"><li>Claude Vision</li><li>PyAutoGUI</li><li>Telegram</li></ul>
+            <div class="project-feature-media">
+                <figure class="project-flow-figure"><figcaption data-de="Vom Testauftrag zum Ergebnis" data-en="From test request to result">Vom Testauftrag zum Ergebnis</figcaption><ol class="project-workflow"><li data-de="Testauftrag per Telegram" data-en="Test request via Telegram">Testauftrag per Telegram</li><li data-de="KI analysiert den Bildschirm" data-en="AI analyses the screen">KI analysiert den Bildschirm</li><li data-de="PyAutoGUI führt Aktionen aus" data-en="PyAutoGUI executes actions">PyAutoGUI führt Aktionen aus</li><li data-de="Visuelle Prüfung des Ergebnisses" data-en="Visual result verification">Visuelle Prüfung des Ergebnisses</li><li data-de="Ergebnis zurück an Telegram" data-en="Result returned to Telegram">Ergebnis zurück an Telegram</li></ol></figure>
+                <figure class="project-demo"><figcaption data-de="Demo: KI-gestützter Testlauf" data-en="Demo: AI-driven test run">Demo: KI-gestützter Testlauf</figcaption><video controls playsinline preload="metadata" aria-label="Demo: KI-gestützter Testlauf" data-aria-label-de="Demo: KI-gestützter Testlauf" data-aria-label-en="Demo: AI-driven test run"><source src="video/AIDrivenTest2.mp4" type="video/mp4"><p data-de="Ihr Browser unterstützt dieses Video nicht." data-en="Your browser does not support this video.">Ihr Browser unterstützt dieses Video nicht.</p></video><a href="video/AIDrivenTest2.mp4" data-de="Video direkt öffnen" data-en="Open video directly">Video direkt öffnen</a></figure>
+            </div>
+            <div class="project-links"><a href="ai-test.html" data-de="Projektdetails ansehen →" data-en="View project details →">Projektdetails ansehen →</a></div>
+        </article>
+        <div class="project-grid">
+<article class="project-card" aria-labelledby="rf-project-title"><span class="project-status" data-de="Machbarkeitsstudie" data-en="Proof of concept">Machbarkeitsstudie</span><h3 id="rf-project-title" data-de="Navigationstests mit Robot Framework" data-en="Navigation tests with Robot Framework">Navigationstests mit Robot Framework</h3><p class="project-outcome" data-de="Automatisiert POI-Suchen und UI-Interaktionen mit getrennten Testdaten und wiederverwendbaren Testschritten." data-en="Automates POI searches and UI interactions using separate test data and reusable test steps.">Automatisiert POI-Suchen und UI-Interaktionen mit getrennten Testdaten und wiederverwendbaren Testschritten.</p><ul class="project-chips"><li>Robot Framework</li><li>Selenium</li><li>CSV / Excel</li></ul><ol class="project-workflow"><li data-de="Testdaten" data-en="Test data">Testdaten</li><li data-de="UI-Testlauf" data-en="UI test run">UI-Testlauf</li><li data-de="Ergebnisprüfung" data-en="Result verification">Ergebnisprüfung</li></ol><figure class="project-demo"><figcaption data-de="Demo: Navigationstest" data-en="Demo: navigation test">Demo: Navigationstest</figcaption><video controls playsinline preload="metadata" aria-label="Demo: Navigationstest" data-aria-label-de="Demo: Navigationstest" data-aria-label-en="Demo: navigation test"><source src="video/RF_Map_Demo.mp4" type="video/mp4"><p data-de="Ihr Browser unterstützt dieses Video nicht." data-en="Your browser does not support this video.">Ihr Browser unterstützt dieses Video nicht.</p></video><a href="video/RF_Map_Demo.mp4" data-de="Video direkt öffnen" data-en="Open video directly">Video direkt öffnen</a></figure><div class="project-links"><a href="poc_rf.html" data-de="Projektdetails ansehen →" data-en="View project details →">Projektdetails ansehen →</a></div></article>
+<article class="project-card" aria-labelledby="appium-project-title"><span class="project-status" data-de="Machbarkeitsstudie" data-en="Proof of concept">Machbarkeitsstudie</span><h3 id="appium-project-title" data-de="UI-Tests für Android Automotive" data-en="UI tests for Android Automotive">UI-Tests für Android Automotive</h3><p class="project-outcome" data-de="Führt wiederholbare Touch-, Such- und Navigationsabläufe aus und prüft die erwarteten UI-Ergebnisse." data-en="Runs repeatable touch, search and navigation flows and checks the expected UI results.">Führt wiederholbare Touch-, Such- und Navigationsabläufe aus und prüft die erwarteten UI-Ergebnisse.</p><ul class="project-chips"><li>Appium</li><li>Android Automotive</li></ul><ol class="project-workflow"><li data-de="Testablauf" data-en="Test scenario">Testablauf</li><li data-de="Appium-Steuerung" data-en="Appium control">Appium-Steuerung</li><li data-de="UI-Prüfung" data-en="UI verification">UI-Prüfung</li></ol><figure class="project-demo"><figcaption data-de="Demo: Appium-Testlauf" data-en="Demo: Appium test run">Demo: Appium-Testlauf</figcaption><video controls playsinline preload="metadata" aria-label="Demo: Appium-Testlauf" data-aria-label-de="Demo: Appium-Testlauf" data-aria-label-en="Demo: Appium test run"><source src="video/UI_TA_Appium_Demo_AndroidA.mp4" type="video/mp4"><p data-de="Ihr Browser unterstützt dieses Video nicht." data-en="Your browser does not support this video.">Ihr Browser unterstützt dieses Video nicht.</p></video><a href="video/UI_TA_Appium_Demo_AndroidA.mp4" data-de="Video direkt öffnen" data-en="Open video directly">Video direkt öffnen</a></figure><div class="project-links"><a href="poc.html" data-de="Projektdetails ansehen →" data-en="View project details →">Projektdetails ansehen →</a></div></article>
+        </div>
     </section>
 
-
-    <section id="experience">
-        <h2 data-de="Berufserfahrung" data-en="Experience">Berufserfahrung</h2>
-        <p></p>
-        <h3>
-            <span data-de="Weiterbildung &amp; eigene Projekte" data-en="Professional Development &amp; Personal Projects">Weiterbildung &amp; eigene Projekte</span>
-            |
-            <em data-de="KI-Agenten &amp; Testautomatisierung" data-en="AI Agents &amp; Test Automation">KI-Agenten &amp; Testautomatisierung</em>
-            | 11/2025 – <span data-de="Heute" data-en="Present">Heute</span>
-        </h3>
-        <ul>
-            <li>
-                <span data-de="Entwicklung von Proof-of-Concept-Testframeworks mit Computer Vision, KI-Agenten und intelligenter visueller Validierung. Untersuchung KI-gestützter Ansätze zur automatisierten Analyse und Entscheidungsunterstützung im Softwaretest." data-en="Development of proof-of-concept test frameworks using computer vision, AI agents, and intelligent visual validation. Exploration of AI-assisted approaches for automated analysis and decision support in software testing.">Entwicklung von Proof-of-Concept-Testframeworks mit Computer Vision, KI-Agenten und intelligenter visueller Validierung. Untersuchung KI-gestützter Ansätze zur automatisierten Analyse und Entscheidungsunterstützung im Softwaretest.</span>
-            </li>
-        </ul>
-
-        <h3>Neusoft Technology Solutions GmbH</h3>
-        <ul>
-            <div class="experience-item">
-
-                <div class="experience-header">
-                    <h3>
-
-                        <span data-de="Test Koordinatorin" data-en="Test Coordinator">
-                            Test Koordinatorin
-                        </span>
-                    </h3>
-
-                    <span class="experience-date">07/2021 – 10/2025</span>
-                </div>
-
-                <ul>
-
-                    <li>
-                        <strong data-de="Projektleitung & Koordination:" data-en="Test Lead:">
-                            Projektleitung & Koordination:
-                        </strong>
-
-                        <span data-de=" Verantwortung für die Testkoordination von
-Navigationssystemen, Infotainment und Telematiksystemen (ZEEKR, BYD, GWM,
-HONGQI, SMART, Lynk & Co, LOTUS)."
-                            data-en=" Led system and vehicle test activities for IVI, navigation and telematics systems (ZEEKR, BYD, GWM, HONGQI, SMART, Lynk & Co, LOTUS).">
-                            Verantwortung für die Testkoordination von
-                            Navigationssystemen, Infotainment und Telematiksystemen (ZEEKR, BYD, GWM,
-                            HONGQI, SMART, Lynk & Co, LOTUS).
-                        </span>
-                    </li>
-
-                    <li>
-                        <strong data-de="Test-Management:" data-en="Test Management:">
-                            Test-Management:
-                        </strong>
-
-                        <span
-                            data-de=" Planung und Koordination europaweiter Feldtests, inklusive Testumfang-Definition, Risikoanalyse, Überwachung der Durchführung und Ergebnisberichterstattung. Verwaltung mit JIRA und Xray."
-                            data-en=" Planned and coordinated EU-wide field tests, including scope definition, risk assessment, execution monitoring and reporting. Managed via JIRA and Xray.">
-                            Planung und Koordination europaweiter Feldtests, inklusive Testumfang-Definition,
-                            Risikoanalyse, Überwachung der Durchführung und Ergebnisberichterstattung. Verwaltung mit
-                            JIRA und Xray.
-                        </span>
-                    </li>
-
-                    <li>
-                        <strong data-de="Homologation & Zertifizierung:" data-en="Homologation & Certification:">
-                            Homologation & Zertifizierung:
-                        </strong>
-
-                        <span data-de=" Erfolgreiche Durchführung der BYD-ISA Homologation
-(LKW & PKW) in Tschechien und Spanien."
-                            data-en=" Supported Intelligent Speed Assistance (ISA) homologation tests for passenger and commercial vehicles in Spain and Czech Republic.">
-                            Erfolgreiche Durchführung der BYD-ISA Homologation
-                            (LKW & PKW) in Tschechien und Spanien.
-                        </span>
-                    </li>
-
-                    <li>
-                        <strong data-de="Stakeholder-Management:" data-en="Stakeholder Management:">
-                            Stakeholder-Management:
-                        </strong>
-
-                        <span data-de=" Abstimmung zwischen internationalen Kunden und internen
-Testteams; Erstellung von Release-Reports für verschiedene Fahrzeugvarianten."
-                            data-en=" Acted as technical interface between OEM teams and internal testing and engineering departments.">
-                            Abstimmung zwischen internationalen Kunden und internen
-Testteams; Erstellung von Release-Reports für verschiedene Fahrzeugvarianten.
-                        </span>
-                    </li>
-
-                    <li>
-                        <strong data-de="Testautomatisierung:" data-en="Test Automation:">
-                            Testautomatisierung:
-                        </strong>
-
-                        <span
-                            data-de=" Entwicklung von Proof-of-Concept UI-Testautomatisierung mit Appium und Robot Framework zur Demonstration der Automatisierungsfähigkeit."
-                            data-en=" Developed proof-of-concept UI test automation using Appium and Robot Framework to demonstrate automation feasibility.">
-                            Entwicklung von Proof-of-Concept UI-Testautomatisierung mit Appium und Robot Framework zur
-                            Demonstration der Automatisierungsfähigkeit.
-                        </span>
-                    </li>
-
-                    <li>
-                        <strong data-de="Testanalyse:" data-en="Test Analysis:">
-                            Testanalyse:
-                        </strong>
-
-                        <span
-                            data-de=" Fehlerbehebung vor Ort auf der IAA München 2021 und während der OEM-Testkampagnen."
-                            data-en=" Resolved test issues on-site at IAA Munich 2021 and during OEM test campaigns.">
-                            Fehlerbehebung vor Ort auf der IAA München 2021 und während der OEM-Testkampagnen.
-                        </span>
-                    </li>
-                </ul>
-
-            </div>
-        </ul>
-
-        <h3>ZD Automotive GmbH </h3>
-        <ul>
-            <div class="experience-item">
-
-                <div class="experience-header">
-                    <h3>
-
-                        <span data-de="Testingenieurin" data-en="Test Engineer">
-                            Testingenieurin
-                        </span>
-                    </h3>
-
-                    <span class="experience-date">04/2017 - 05/2021</span>
-                </div>
-
-                <ul>
-
-                    <li>
-                        <strong data-de="HMI and SDS Testing:" data-en="HMI and SDS Testing:">
-                            HMI and SDS Testing:
-                        </strong>
-
-                        <span data-de="Entwicklung und Testen von Tools für HMI- und
-Sprachdialogsysteme (SDS)."
-                            data-en=" Performed infotainment system validation and car function testing within Audi China projects. Test defect management with JIRA.">
-                            Entwicklung und Testen von Tools für HMI- und
-                            Sprachdialogsysteme (SDS).
-                        </span>
-                    </li>
-
-                    <li>
-                        <strong data-de="Test Automation:" data-en="Test Automation:">
-                            Test-Automation:
-                        </strong>
-
-                        <span
-                            data-de=" Entwicklung und Pflege interner Testtools (HMI, SDS, Datenlogging). Implementierung von HIL-Testautomatisierung mit Java-Testskripten im JUnit-Framework zur Validierung der Schnittstelle zwischen Hardware- und Softwareebene. Entwicklung von JavaScript-Testskripten für UI-Testautomatisierung."
-                            data-en=" Developed and maintained internal test tools (HMI, SDS, data logging solutions). Implemented HIL test automation using Java test scripts with the JUnit framework to validate the interface between hardware and software levels. Developed JavaScript test scripts for UI test automation.">
-                            Developed and maintained internal test tools (HMI, SDS, data logging solutions). Implemented HIL test automation using Java test scripts with the JUnit framework to validate the interface between hardware and software levels. Developed JavaScript test scripts for UI test automation.
-                        </span>
-                    </li>
-
-                    <li>
-                        <strong data-de="Agile Methoden:" data-en="Agile Methods:">
-                            Agile Methoden:
-                        </strong>
-
-                        <span data-de=" Arbeit in agilen Entwicklungsteams (SCRUM), Unterstützung
-kontinuierlicher Testaktivitäten."
-                            data-en=" Participated in agile development teams (SCRUM), supporting continuous testing activities.">
-                            Arbeit in agilen Entwicklungsteams (SCRUM), Unterstützung
-                            kontinuierlicher Testaktivitäten.
-                        </span>
-                    </li>
-
-                    <li>
-                        <strong data-de="Projektkoordination:" data-en="Project coordination:">
-                            Projektkoordination:
-                        </strong>
-
-                        <span data-de="Unterstützen der Infotainment-Validierung für Audi (HCP3)."
-                            data-en=" Supported project coordination activities in Audi HCP3 infotainment validation project.">
-                            Unterstützen der Infotainment-Validierung für Audi (HCP3).
-                        </span>
-                    </li>
-                </ul>
-
-                <div class="experience-header">
-                    <h3>
-
-                        <span data-de="Werkstudentin, Praktikum " data-en="Work Student, Internship ">
-                            Werkstudentin, Praktikum
-                        </span>
-                    </h3>
-
-                    <span class="experience-date">04/2015 - 03/2017</span>
-                </div>
-
-                <ul>
-
-                    <li>
-                        <strong data-de="Manuelle Tests:" data-en="Manual Testing: Car Function Test">
-                            Manuelle Tests:
-                        </strong>
-
-                        <span data-de=" Analyse von CAN-Traces mit Vector Tools und BluePirat."
-                            data-en=" Supported infotainment system validation and CAN trace analysis with Vector CANoe and BluePirat.">
-                            Analyse von CAN-Traces mit Vector Tools und BluePirat.
-                        </span>
-                    </li>
-
-            </div>
-
-            </div>
-        </ul>
-
-        <h3>Master Thesis - CARISSMA - Technische Hochschule Ingolstadt | 03/2016 - 03/2017 </h3>
-        <ul>
-            <li>
-                <span data-de="Implementation and Investigation of Control Strategies for an Autonomous Maneuvering System in a Full-Scale Vehicle" data-en="Implementation and Investigation of Control Strategies for an Autonomous Maneuvering System in a Full-Scale Vehicle">Implementation and Investigation of Control Strategies for an Autonomous Maneuvering System in a Full-Scale Vehicle</span>
-            </li>
-        </ul>
-
-    </section>
-
-    <section id="skills">
-
-        <h2 data-de="Fähigkeiten" data-en="Skills">
-            Fähigkeiten
-        </h2>
-
-        <div class="skills-container">
-
-            <div class="skill-card">
-                <h3>SW/HW System Test</h3>
-                <ul>
-                    <li data-de="Infotainment" data-en="Infotainment">
-                        Infotainment
-                    </li>
-                    <li data-de="Navigation" data-en="Navigation">
-                        Navigation
-                    </li>
-                    <li data-de="Telematik" data-en="Telematics">
-                        Telematik
-                    </li>
-                    <li data-de="ADAS" data-en="ADAS">
-                        ADAS
-                    </li>
-                    <li data-de="Fahrzeugfunktionen" data-en="Car Functions">
-                        Fahrzeugfunktionen
-                    </li>
-                </ul>
-            </div>
-
-            <div class="skill-card">
-                <h3>Technical Communication</h3>
-                <p data-de="Kommunikation zwischen OEM und Dienstleister in mehreren Sprachen"
-                    data-en="OEM & Supplier Interface in multiple languages">
-                    Kommunikation zwischen OEM und Dienstleister in mehreren Sprachen
+    <section id="experience" aria-labelledby="experience-heading">
+        <p class="eyebrow"
+            data-de="Beruflicher Hintergrund"
+            data-en="Professional background">Beruflicher Hintergrund</p>
+        <h2 id="experience-heading"
+            data-de="Berufserfahrung"
+            data-en="Experience">Berufserfahrung</h2>
+        <ol class="experience-timeline">
+            <li class="timeline-entry">
+                <p class="timeline-date">
+                    <time datetime="2025-11">11/2025</time> –
+                    <span
+                        data-de="heute"
+                        data-en="present">heute</span>
                 </p>
-            </div>
-            <div class="skill-card">
-                <h3>Test Management</h3>
-                <ul>
-                    <li data-de="Planung" data-en="Planning">Planung</li>
-                    <li data-de="Überwachung" data-en="Monitoring">Überwachung</li>
-                    <li data-de="Durchführung" data-en="Execution">Durchführung</li>
-                    <li data-de="Berichterstattung" data-en="Report">Berichterstattung</li>
-                </ul>
-            </div>
+                <div class="timeline-content">
+                    <h3
+                        data-de="Weiterbildung · KI-Agenten &amp; Testautomatisierung"
+                        data-en="Professional development · AI agents &amp; test automation">Weiterbildung · KI-Agenten &amp; Testautomatisierung</h3>
+                    <p class="timeline-organization"
+                        data-de="Weiterbildung &amp; eigene Projekte"
+                        data-en="Professional development &amp; personal projects">Weiterbildung &amp; eigene Projekte</p>
+                    <ul>
+                        <li
+                            data-de="Entwicklung von Testprototypen mit Computer Vision und KI-Agenten für visuelle Prüfungen."
+                            data-en="Developing test prototypes with computer vision and AI agents for visual verification.">Entwicklung von Testprototypen mit Computer Vision und KI-Agenten für visuelle Prüfungen.</li>
+                        <li
+                            data-de="Erprobung KI-gestützter Analyse und Entscheidungsunterstützung im Softwaretest."
+                            data-en="Exploring AI-assisted analysis and decision support in software testing.">Erprobung KI-gestützter Analyse und Entscheidungsunterstützung im Softwaretest.</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="timeline-entry">
+                <p class="timeline-date">
+                    <time datetime="2021-07">07/2021</time> –
+                    <time datetime="2025-10">10/2025</time>
+                </p>
+                <div class="timeline-content">
+                    <h3
+                        data-de="Testkoordinatorin"
+                        data-en="Test Coordinator">Testkoordinatorin</h3>
+                    <p class="timeline-organization"
+                        data-de="Neusoft Technology Solutions GmbH"
+                        data-en="Neusoft Technology Solutions GmbH">Neusoft Technology Solutions GmbH</p>
+                    <ul>
+                        <li
+                            data-de="Koordination europaweiter IVI-, Navigations- und Telematiktests für internationale OEMs; Testplanung, Risikoanalyse und Berichterstattung mit Jira und Xray."
+                            data-en="Coordinated IVI, navigation and telematics testing across Europe for international OEMs; managed test planning, risk analysis and reporting with Jira and Xray.">Koordination europaweiter IVI-, Navigations- und Telematiktests für internationale OEMs; Testplanung, Risikoanalyse und Berichterstattung mit Jira und Xray.</li>
+                        <li
+                            data-de="Entwicklung von UI-Testprototypen mit Appium und Robot Framework zur Prüfung der Automatisierbarkeit."
+                            data-en="Developed UI test prototypes with Appium and Robot Framework to demonstrate automation feasibility.">Entwicklung von UI-Testprototypen mit Appium und Robot Framework zur Prüfung der Automatisierbarkeit.</li>
+                        <li
+                            data-de="Unterstützung der ISA-Homologation für Pkw und Nutzfahrzeuge in Spanien und Tschechien."
+                            data-en="Supported ISA homologation testing for passenger and commercial vehicles in Spain and the Czech Republic.">Unterstützung der ISA-Homologation für Pkw und Nutzfahrzeuge in Spanien und Tschechien.</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="timeline-entry">
+                <p class="timeline-date">
+                    <time datetime="2017-04">04/2017</time> –
+                    <time datetime="2021-05">05/2021</time>
+                </p>
+                <div class="timeline-content">
+                    <h3
+                        data-de="Testingenieurin"
+                        data-en="Test Engineer">Testingenieurin</h3>
+                    <p class="timeline-organization"
+                        data-de="ZD Automotive GmbH"
+                        data-en="ZD Automotive GmbH">ZD Automotive GmbH</p>
+                    <ul>
+                        <li
+                            data-de="Implementierung von HIL-Tests mit Java und JUnit sowie UI-Testskripten mit JavaScript."
+                            data-en="Implemented HIL tests with Java and JUnit, and UI test scripts with JavaScript.">Implementierung von HIL-Tests mit Java und JUnit sowie UI-Testskripten mit JavaScript.</li>
+                        <li
+                            data-de="Entwicklung und Pflege interner Testwerkzeuge für HMI, Sprachdialogsysteme und Datenaufzeichnung."
+                            data-en="Developed and maintained internal test tools for HMI, speech dialogue systems and data logging.">Entwicklung und Pflege interner Testwerkzeuge für HMI, Sprachdialogsysteme und Datenaufzeichnung.</li>
+                        <li
+                            data-de="Validierung von Infotainment- und Fahrzeugfunktionen in Audi-Projekten; Unterstützung der HCP3-Testkoordination und kontinuierlicher Tests in Scrum-Teams."
+                            data-en="Validated infotainment and vehicle functions in Audi projects; supported HCP3 test coordination and continuous testing in Scrum teams.">Validierung von Infotainment- und Fahrzeugfunktionen in Audi-Projekten; Unterstützung der HCP3-Testkoordination und kontinuierlicher Tests in Scrum-Teams.</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="timeline-entry">
+                <p class="timeline-date">
+                    <time datetime="2015-04">04/2015</time> –
+                    <time datetime="2017-03">03/2017</time>
+                </p>
+                <div class="timeline-content">
+                    <h3
+                        data-de="Werkstudentin &amp; Praktikantin"
+                        data-en="Working student &amp; intern">Werkstudentin &amp; Praktikantin</h3>
+                    <p class="timeline-organization"
+                        data-de="ZD Automotive GmbH"
+                        data-en="ZD Automotive GmbH">ZD Automotive GmbH</p>
+                    <ul>
+                        <li
+                            data-de="Unterstützung der Infotainment-Validierung und Analyse von CAN-Traces mit Vector CANoe und BluePirat."
+                            data-en="Supported infotainment validation and CAN trace analysis with Vector CANoe and BluePirat.">Unterstützung der Infotainment-Validierung und Analyse von CAN-Traces mit Vector CANoe und BluePirat.</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="timeline-entry">
+                <p class="timeline-date">
+                    <time datetime="2016-03">03/2016</time> –
+                    <time datetime="2017-03">03/2017</time>
+                </p>
+                <div class="timeline-content">
+                    <h3
+                        data-de="Masterarbeit · autonomes Manövrieren"
+                        data-en="Master’s thesis · autonomous manoeuvring">Masterarbeit · autonomes Manövrieren</h3>
+                    <p class="timeline-organization"
+                        data-de="CARISSMA · Technische Hochschule Ingolstadt"
+                        data-en="CARISSMA · Technische Hochschule Ingolstadt">CARISSMA · Technische Hochschule Ingolstadt</p>
+                    <ul>
+                        <li
+                            data-de="Implementierung und Untersuchung von Regelungsstrategien für ein autonomes Manövriersystem in einem realen Fahrzeug."
+                            data-en="Implemented and investigated control strategies for an autonomous manoeuvring system in a full-scale vehicle.">Implementierung und Untersuchung von Regelungsstrategien für ein autonomes Manövriersystem in einem realen Fahrzeug.</li>
+                    </ul>
+                </div>
+            </li>
+        </ol>
+    </section>
 
-            <div class="skill-card">
-                <h3>Certification</h3>
-                <ul>
-                    <li data-de="ISTQB Certified Tester  (2019)" data-en="ISTQB Certified Tester  (2019)">ISTQB Certified Tester  (2019)</li>
-                    <li data-de="SCRUM (2019)" data-en="SCRUM (2019)">SCRUM (2019)</li>
-                    <li data-de="ASPICE (Peer-Training, 2021)" data-en="ASPICE (Peer-Training, 2021)">ASPICE (Peer-Training, 2021)</li>
-                    <li data-de="ISTQB Certified Test Manager (2023)" data-en="ISTQB Certified Test Manager (2023)">ISTQB Certified Test Manager (2023)</li>
-                </ul>
-            </div>
-
-            <div class="skill-card">
-                <h3>Tools</h3>
-                <ul>
-                    <li data-de="JIRA" data-en="JIRA">JIRA</li>
-                    <li data-de="Xray" data-en="Xray">Xray</li>
-                    <li data-de="Git" data-en="Git">Git</li>
-                    <li data-de="Vector Toolset (CANoe/CANalyzer)" data-en="Vector Toolset (CANoe/CANalyzer)">Vector
-                        Toolset (CANoe/CANalyzer)</li>
+    <section id="skills" aria-labelledby="skills-heading">
+        <p class="eyebrow" data-de="Werkzeuge &amp; Kompetenzen" data-en="Tools &amp; capabilities">Werkzeuge &amp; Kompetenzen</p>
+        <h2 id="skills-heading" data-de="Fähigkeiten" data-en="Skills">Fähigkeiten</h2>
+        <div class="skill-groups">
+            <div class="skill-group" role="group" aria-labelledby="skills-automotive">
+                <h3 id="skills-automotive" data-de="Automotive-Tests" data-en="Automotive testing">Automotive-Tests</h3>
+                <ul class="skill-chips">
+                    <li data-de="IVI / Infotainment" data-en="IVI / Infotainment">IVI / Infotainment</li>
+                    <li data-de="Navigation" data-en="Navigation">Navigation</li>
+                    <li data-de="Telematik" data-en="Telematics">Telematik</li>
+                    <li data-de="ADAS" data-en="ADAS">ADAS</li>
+                    <li data-de="Fahrzeugfunktionen" data-en="Vehicle functions">Fahrzeugfunktionen</li>
+                    <li data-de="HIL-Tests" data-en="HIL testing">HIL-Tests</li>
+                    <li data-de="Vector CANoe / CANalyzer" data-en="Vector CANoe / CANalyzer">Vector CANoe / CANalyzer</li>
                     <li data-de="BluePirat" data-en="BluePirat">BluePirat</li>
                 </ul>
             </div>
-
-            <div class="skill-card">
-                <h3>Test Automation</h3>
-                <ul>
-                    <li data-de="PoC Robot Framework" data-en="PoC Robot Framework">PoC/Demo Robot Framework</li>
-                    <li data-de="PoC Appium" data-en="PoC Appium">PoC/Demo Appium</li>
+            <div class="skill-group" role="group" aria-labelledby="skills-automation">
+                <h3 id="skills-automation" data-de="Automatisierung &amp; KI" data-en="Automation &amp; AI">Automatisierung &amp; KI</h3>
+                <ul class="skill-chips">
                     <li data-de="Python" data-en="Python">Python</li>
+                    <li data-de="Java / JUnit" data-en="Java / JUnit">Java / JUnit</li>
                     <li data-de="JavaScript" data-en="JavaScript">JavaScript</li>
+                    <li data-de="Git" data-en="Git">Git</li>
+                    <li data-de="Robot Framework · Prototyp" data-en="Robot Framework · prototype">Robot Framework · Prototyp</li>
+                    <li data-de="Selenium · Prototyp" data-en="Selenium · prototype">Selenium · Prototyp</li>
+                    <li data-de="Appium · Prototyp" data-en="Appium · prototype">Appium · Prototyp</li>
+                    <li data-de="KI-Agenten · Prototyp" data-en="AI agents · prototype">KI-Agenten · Prototyp</li>
+                    <li data-de="Maschinelles Lernen · Weiterbildung" data-en="Machine learning · coursework">Maschinelles Lernen · Weiterbildung</li>
+                    <li data-de="YOLOv7 · Selbststudium" data-en="YOLOv7 · self-study">YOLOv7 · Selbststudium</li>
                 </ul>
             </div>
-
-            <div class="skill-card">
-                <h3>Languages</h3>
-                <ul>
+            <div class="skill-group" role="group" aria-labelledby="skills-management">
+                <h3 id="skills-management" data-de="Testmanagement" data-en="Test management">Testmanagement</h3>
+                <ul class="skill-chips">
+                    <li data-de="Testplanung" data-en="Test planning">Testplanung</li>
+                    <li data-de="Risikoanalyse" data-en="Risk analysis">Risikoanalyse</li>
+                    <li data-de="Testdurchführung" data-en="Test execution">Testdurchführung</li>
+                    <li data-de="Testüberwachung" data-en="Test monitoring">Testüberwachung</li>
+                    <li data-de="Ergebnisberichte" data-en="Test reporting">Ergebnisberichte</li>
+                    <li data-de="Jira / Xray" data-en="Jira / Xray">Jira / Xray</li>
+                    <li data-de="ISTQB Certified Tester · 2019" data-en="ISTQB Certified Tester · 2019">ISTQB Certified Tester · 2019</li>
+                    <li data-de="ISTQB Test Manager · 2023" data-en="ISTQB Test Manager · 2023">ISTQB Test Manager · 2023</li>
+                    <li data-de="ASPICE · kollegiale Schulung" data-en="ASPICE · peer training">ASPICE · kollegiale Schulung</li>
+                </ul>
+            </div>
+            <div class="skill-group" role="group" aria-labelledby="skills-collaboration">
+                <h3 id="skills-collaboration" data-de="Zusammenarbeit &amp; Sprachen" data-en="Collaboration &amp; languages">Zusammenarbeit &amp; Sprachen</h3>
+                <ul class="skill-chips">
+                    <li data-de="OEM-Abstimmung" data-en="OEM coordination">OEM-Abstimmung</li>
+                    <li data-de="Internationale Testteams" data-en="International test teams">Internationale Testteams</li>
+                    <li data-de="Scrum" data-en="Scrum">Scrum</li>
                     <li data-de="Deutsch" data-en="German">Deutsch</li>
                     <li data-de="Englisch" data-en="English">Englisch</li>
                     <li data-de="Chinesisch" data-en="Chinese">Chinesisch</li>
                     <li data-de="Malaiisch" data-en="Malay">Malaiisch</li>
                 </ul>
             </div>
-
-            <div class="skill-card">
-                <h3>Weiterbildung</h3>
-                <ul>
-                    <li data-de="Machine Learning" data-en="Machine Learning">Machine Learning</li>
-                    <li data-de="AI Fundamentals, CNN" data-en="AI Fundamentals, CNN">AI Fundamentals, CNN</li>
-                    <li data-de="AWS Cloud" data-en="AWS Cloud">AWS Cloud </li>
-                    <li data-de="YOLOv7 Image Recognition" data-en="YOLOv7 Image Recognition">YOLOv7 Image Recognition (Self-Study)</li>
-                </ul>
-            </div>
-
         </div>
-
-        </div>
-
     </section>
 
-    <section id="contact">
-        <h2 data-de="Kontakt" data-en="Contact">Kontakt</h2>
+    <section id="about" aria-labelledby="about-heading">
+        <p class="eyebrow" data-de="Mein Weg" data-en="My path">Mein Weg</p>
+        <h2 id="about-heading" data-de="Über mich" data-en="About">Über mich</h2>
+        <p
+            data-de="Ich bin Testingenieurin mit über acht Jahren Erfahrung in Infotainment, Navigation, Telematik und ADAS. In internationalen Projekten habe ich Fahrzeugtests koordiniert und Testwerkzeuge sowie Automatisierungsprototypen entwickelt."
+            data-en="I am a test engineer with over eight years of experience in infotainment, navigation, telematics and ADAS. In international projects, I have coordinated vehicle testing and developed test tools and automation prototypes.">Ich bin Testingenieurin mit über acht Jahren Erfahrung in Infotainment, Navigation, Telematik und ADAS. In internationalen Projekten habe ich Fahrzeugtests koordiniert und Testwerkzeuge sowie Automatisierungsprototypen entwickelt.</p>
+        <p
+            data-de="Heute übertrage ich diese Erfahrung auf KI-gestützte Testautomatisierung und erprobe visuelle Prüfungen mit KI-Agenten. Ich arbeite auf Deutsch, Englisch, Chinesisch und Malaiisch und verbinde dabei die Perspektiven von OEMs, Entwicklung und Testteams."
+            data-en="Today, I am applying that experience to AI-driven test automation and exploring visual verification with AI agents. I work in German, English, Chinese and Malay, connecting the perspectives of OEMs, developers and test teams.">Heute übertrage ich diese Erfahrung auf KI-gestützte Testautomatisierung und erprobe visuelle Prüfungen mit KI-Agenten. Ich arbeite auf Deutsch, Englisch, Chinesisch und Malaiisch und verbinde dabei die Perspektiven von OEMs, Entwicklung und Testteams.</p>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-heading">
+        <p class="eyebrow" data-de="Lassen Sie uns sprechen" data-en="Let’s talk">Lassen Sie uns sprechen</p>
+        <h2 id="contact-heading" data-de="Kontakt" data-en="Contact">Kontakt</h2>
         <div class="contact-layout">
             <div class="contact-intro">
                 <p
-                    data-de="Haben Sie Interesse an einer Zusammenarbeit, einer Testautomatisierungs-Idee oder einem Automotive-Testprojekt? Schreiben Sie mir gern eine kurze Nachricht."
-                    data-en="Interested in collaboration, a test automation idea, or an automotive testing project? Send me a short message.">
-                    Haben Sie Interesse an einer Zusammenarbeit, einer Testautomatisierungs-Idee oder einem
-                    Automotive-Testprojekt? Schreiben Sie mir gern eine kurze Nachricht.
-                </p>
+                    data-de="Suchen Sie Unterstützung für Automotive-Tests oder möchten Sie über KI-gestützte Testautomatisierung sprechen? Ich freue mich auf Ihre Nachricht."
+                    data-en="Looking for support with automotive testing or interested in AI-driven test automation? I’d be happy to hear from you.">Suchen Sie Unterstützung für Automotive-Tests oder möchten Sie über KI-gestützte Testautomatisierung sprechen? Ich freue mich auf Ihre Nachricht.</p>
                 <p
+                    id="contact-form-note"
                     class="contact-note"
-                    data-de="Das Formular öffnet Ihr E-Mail-Programm mit einer vorbereiteten Nachricht."
-                    data-en="The form opens your email app with a prepared message.">
-                    Das Formular öffnet Ihr E-Mail-Programm mit einer vorbereiteten Nachricht.
-                </p>
+                    data-de="Das Formular öffnet einen Entwurf in Ihrem E-Mail-Programm. Sie prüfen und senden die Nachricht dort."
+                    data-en="The form opens a draft in your email app. You review and send the message there.">Das Formular öffnet einen Entwurf in Ihrem E-Mail-Programm. Sie prüfen und senden die Nachricht dort.</p>
             </div>
 
-            <form class="contact-form" id="contact-form">
+            <form class="contact-form" id="contact-form" aria-describedby="contact-form-note">
+                <p class="contact-required" data-de="Alle Felder sind erforderlich." data-en="All fields are required.">Alle Felder sind erforderlich.</p>
                 <label for="contact-name" data-de="Name" data-en="Name">Name</label>
                 <input
                     id="contact-name"
@@ -459,21 +318,13 @@ kontinuierlicher Testaktivitäten."
                     data-placeholder-en="What would you like to discuss?"
                     placeholder="Worum geht es?"></textarea>
 
-                <button class="btn contact-submit" type="submit" data-de="Nachricht senden" data-en="Send message">
-                    Nachricht senden
-                </button>
-                <p
-                    class="form-status"
-                    id="contact-status"
-                    data-de="Bitte füllen Sie alle Felder aus."
-                    data-en="Please complete all fields.">
-                    Bitte füllen Sie alle Felder aus.
-                </p>
+                <button class="portfolio-button portfolio-button--primary contact-submit" type="submit" data-de="E-Mail-Entwurf öffnen" data-en="Open email draft">E-Mail-Entwurf öffnen</button>
             </form>
         </div>
     </section>
 
-    <script src="script.js?v=20260915b"></script>
+    </main>
+    <script src="script.js?v=20260920-stars"></script>
 </body>
 
 </html>

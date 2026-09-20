@@ -14,19 +14,21 @@ document.body.prepend(galaxyBackground);
 // FLOATING CHAT / CONTACT WIDGET
 const chatWidget = document.createElement("aside");
 chatWidget.className = "chat-widget";
-chatWidget.setAttribute("aria-label", "Portfolio chat contact");
+chatWidget.setAttribute("aria-label", "Portfolio-Kontakt");
+chatWidget.setAttribute("data-aria-label-de", "Portfolio-Kontakt");
+chatWidget.setAttribute("data-aria-label-en", "Portfolio contact");
 chatWidget.innerHTML = `
     <button class="chat-toggle" type="button" aria-expanded="false" aria-controls="chat-panel">
         <span class="chat-toggle__spark" aria-hidden="true">✦</span>
         <span data-de="Chat" data-en="Chat">Chat</span>
     </button>
-    <div class="chat-panel" id="chat-panel" aria-hidden="true">
+    <div class="chat-panel" id="chat-panel" aria-hidden="true" inert>
         <div class="chat-panel__header">
             <div>
-                <p class="chat-panel__eyebrow" data-de="Portfolio Assistant" data-en="Portfolio Assistant">Portfolio Assistant</p>
+                <p class="chat-panel__eyebrow" data-de="Portfolio-Kontakt" data-en="Portfolio contact">Portfolio Assistant</p>
                 <h2 data-de="Hallo, ich bin Xueni." data-en="Hi, I am Xueni.">Hallo, ich bin Xueni.</h2>
             </div>
-            <button class="chat-close" type="button" aria-label="Close chat">×</button>
+            <button class="chat-close" type="button" aria-label="Chat schließen" data-aria-label-de="Chat schließen" data-aria-label-en="Close chat">×</button>
         </div>
         <p class="chat-bubble"
             data-de="Danke für Ihren Besuch. Der interaktive Chat kommt später. Für jetzt können Sie mir gern direkt schreiben."
@@ -35,7 +37,7 @@ chatWidget.innerHTML = `
         </p>
         <div class="chat-actions">
             <a class="chat-action chat-action--primary"
-                href="mailto:yhnm_88@hotmail.com?subject=Portfolio%20contact"
+                href="mailto:yhnm_88@hotmail.com"
                 data-de="E-Mail senden"
                 data-en="Send email">E-Mail senden</a>
             <a class="chat-action"
@@ -58,6 +60,9 @@ function setChatOpen(isOpen) {
     chatWidget.classList.toggle("is-open", isOpen);
     chatToggle.setAttribute("aria-expanded", String(isOpen));
     chatPanel.setAttribute("aria-hidden", String(!isOpen));
+    chatPanel.inert = !isOpen;
+    if (isOpen) chatClose.focus();
+    else if (chatPanel.contains(document.activeElement)) chatToggle.focus();
 }
 
 chatToggle.addEventListener("click", function () {
@@ -80,37 +85,11 @@ document.addEventListener("click", function (event) {
     }
 });
 
-// DROPDOWN CLICK
-document.querySelectorAll(".dropbtn").forEach(button => {
-    button.setAttribute("aria-expanded", "false");
-
-    button.addEventListener("click", function (e) {
-        e.stopPropagation();
-
-        document.querySelectorAll(".dropdown").forEach(drop => {
-            if (drop !== this.parentElement) {
-                drop.classList.remove("active");
-                drop.querySelector(".dropbtn").setAttribute("aria-expanded", "false");
-            }
-        });
-
-        this.parentElement.classList.toggle("active");
-        this.setAttribute("aria-expanded", this.parentElement.classList.contains("active"));
-    });
-});
-
-document.addEventListener("click", function () {
-    document.querySelectorAll(".dropdown").forEach(drop => {
-        drop.classList.remove("active");
-        drop.querySelector(".dropbtn").setAttribute("aria-expanded", "false");
-    });
-});
-
-
 // LANGUAGE SWITCH (SAFE VERSION)
 function setLanguage(lang) {
 
-    localStorage.setItem("language", lang);
+    lang = lang === "de" ? "de" : "en";
+    try { localStorage.setItem("language", lang); } catch {}
 
     const elements = document.querySelectorAll("[data-de]");
 
@@ -124,6 +103,13 @@ function setLanguage(lang) {
         el.setAttribute("placeholder", el.getAttribute(`data-placeholder-${lang}`));
     });
 
+    document.querySelectorAll(`[data-aria-label-${lang}]`).forEach(el => {
+        el.setAttribute("aria-label", el.getAttribute(`data-aria-label-${lang}`));
+    });
+    document.querySelectorAll("[data-language]").forEach(button => {
+        button.setAttribute("aria-pressed", String(button.dataset.language === lang));
+    });
+
     document.documentElement.lang = lang;
 }
 
@@ -131,7 +117,8 @@ function setLanguage(lang) {
 // LOAD DEFAULT LANGUAGE
 document.addEventListener("DOMContentLoaded", function () {
 
-    const savedLang = localStorage.getItem("language") || "en";
+    let savedLang = "de";
+    try { savedLang = localStorage.getItem("language") || "de"; } catch {}
     setLanguage(savedLang);
 
 });
@@ -151,33 +138,38 @@ window.addEventListener("load", function () {
 
 // CONTACT FORM
 const contactForm = document.getElementById("contact-form");
-const contactStatus = document.getElementById("contact-status");
 
 if (contactForm) {
     contactForm.addEventListener("submit", function (event) {
         event.preventDefault();
 
         if (!contactForm.checkValidity()) {
-            contactStatus.style.display = "block";
             contactForm.reportValidity();
             return;
         }
-
-        contactStatus.style.display = "none";
 
         const formData = new FormData(contactForm);
         const senderName = formData.get("name").trim();
         const senderEmail = formData.get("email").trim();
         const message = formData.get("message").trim();
         const recipient = ["yhnm_88", "hotmail.com"].join("@");
-        const subject = `Portfolio contact from ${senderName}`;
+        const isGerman = document.documentElement.lang === "de";
+        const subject = isGerman ? `Portfolio-Anfrage von ${senderName}` : `Portfolio contact from ${senderName}`;
         const body = [
             `Name: ${senderName}`,
-            `Email: ${senderEmail}`,
+            `${isGerman ? "E-Mail" : "Email"}: ${senderEmail}`,
             "",
             message
         ].join("\n");
 
         window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     });
+}
+
+
+const portfolioNav = document.querySelector(".portfolio-nav");
+if (portfolioNav) {
+    new ResizeObserver(() => {
+        document.documentElement.style.setProperty("--nav-height", `${portfolioNav.offsetHeight}px`);
+    }).observe(portfolioNav);
 }

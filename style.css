@@ -1,12 +1,100 @@
-body {
-    margin: 0;
-    font-family: "Segoe UI", sans-serif;
-    min-height: 100vh;
-    background: #030014;
-    color: #f8f7ff;
+/* Shared foundation: spacing uses an 8px scale at the default root size. */
+:root {
+    color-scheme: dark;
+    --space-1: 0.5rem;
+    --space-2: 1rem;
+    --space-3: 1.5rem;
+    --space-4: 2rem;
+    --space-5: 2.5rem;
+    --space-6: 3rem;
+    --space-8: 4rem;
+    --space-12: 6rem;
+    --space-16: 8rem;
+    --section-padding: clamp(4rem, 8vw, 8rem);
+    --container-width: 1100px;
+    --page-gutter: clamp(var(--space-2), 4vw, var(--space-4));
+    --paragraph-width: 68ch;
+    --font-body: "Segoe UI", system-ui, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Consolas, monospace;
+    --text-body: clamp(1.0625rem, 1rem + 0.2vw, 1.125rem);
+    --text-h1: clamp(2.25rem, 1.5rem + 3vw, 4rem);
+    --text-h2: clamp(1.75rem, 1.25rem + 2vw, 3rem);
+    --text-h3: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
+    --line-height-body: 1.65;
+    --color-background: #080b1c;
+    --color-panel: rgba(8, 11, 28, 0.55);
+    --color-on-accent: #080b1c;
+    --color-surface: rgba(14, 20, 43, 0.55);
+    --color-text: #ffffff;
+    --color-muted: #e0e6f2;
+    --color-accent: #b7ceff;
+    --color-border: rgba(220, 231, 255, 0.3);
+    --card-padding: clamp(var(--space-3), 3vw, var(--space-4));
+    --card-radius: clamp(0.75rem, 1vw, 1rem);
+    --card-border: 1px solid var(--color-border);
 }
 
-body > :not(.galaxy-background):not(.navbar):not(.chat-widget) {
+/* Keep the galaxy palette in both preferences; deepen panels in dark mode. */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-panel: rgba(8, 11, 28, 0.65);
+        --color-surface: rgba(14, 20, 43, 0.65);
+    }
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-body);
+    font-size: var(--text-body);
+    line-height: var(--line-height-body);
+    min-height: 100vh;
+    background: var(--color-background);
+    color: var(--color-text);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-block: 0 var(--space-3);
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+}
+
+h1 { font-size: var(--text-h1); }
+h2 { font-size: var(--text-h2); }
+h3 { font-size: var(--text-h3); }
+
+p {
+    max-width: var(--paragraph-width);
+    margin-block: 0 var(--space-3);
+    overflow-wrap: anywhere;
+}
+
+button, input, textarea, select {
+    font: inherit;
+}
+
+.container,
+.hero,
+section {
+    width: min(var(--container-width), calc(100% - 2 * var(--page-gutter)));
+    margin-inline: auto;
+}
+
+.eyebrow {
+    margin-bottom: var(--space-2);
+    color: var(--color-muted);
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+body > :not(.galaxy-background):not(.navbar):not(.chat-widget):not(.skip-link) {
     position: relative;
     z-index: 1;
 }
@@ -30,7 +118,7 @@ body > :not(.galaxy-background):not(.navbar):not(.chat-widget) {
     background:
         linear-gradient(to bottom, rgba(3, 0, 20, 0.02) 0%, rgba(3, 0, 20, 0.12) 58%, rgba(3, 0, 20, 0.48) 100%),
         url("assets/background/milky-way.jpg") center top / cover no-repeat;
-    filter: brightness(1.28) saturate(1.12);
+    filter: brightness(1.38) saturate(1.12);
     opacity: 0.9;
 }
 
@@ -38,7 +126,7 @@ body > :not(.galaxy-background):not(.navbar):not(.chat-widget) {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, transparent 0%, rgba(3, 0, 20, 0.06) 45%, rgba(3, 0, 20, 0.28) 100%);
+    background: rgba(3, 6, 20, 0.18);
 }
 
 .galaxy-portrait {
@@ -112,6 +200,8 @@ body > :not(.galaxy-background):not(.navbar):not(.chat-widget) {
 }
 
 .galaxy-stars--bright {
+    z-index: 1;
+    filter: drop-shadow(0 0 3px rgba(215, 231, 255, 0.8));
     background-image:
         radial-gradient(circle at 110px 90px, white 0 1.5px, rgba(205, 225, 255, 0.48) 2px, transparent 5px),
         radial-gradient(circle at 340px 220px, white 0 1.8px, rgba(255, 238, 195, 0.44) 2.4px, transparent 6px),
@@ -202,7 +292,7 @@ body > :not(.galaxy-background):not(.navbar):not(.chat-widget) {
 }
 
 .experience-date {
-    color: #aaa;
+    color: var(--color-muted);
     font-size: 14px;
 }
 
@@ -274,42 +364,34 @@ li {
 .hero {
     margin-top: 92px;
     text-align: center;
-    padding: 72px 20px 88px;
+    padding-block: var(--section-padding);
     animation: fadeIn 1.5s ease-in-out;
 }
 
 .hero-name {
     margin: 0 0 16px;
-    color: white;
-    font-size: clamp(4rem, 11vw, 8.4rem);
+    color: var(--color-text);
+    font-size: clamp(2.75rem, 8vw, 5.5rem);
     font-weight: 800;
     letter-spacing: 0.04em;
     line-height: 0.95;
     text-transform: uppercase;
-    text-shadow:
-        0 0 18px rgba(255, 255, 255, 0.22),
-        0 8px 38px rgba(3, 0, 20, 0.82);
 }
 
 .hero h1 {
     margin-bottom: 18px;
-    color: rgba(248, 247, 255, 0.9);
+    color: var(--color-text);
     font-size: clamp(1.45rem, 3.1vw, 2.75rem);
     font-weight: 650;
     line-height: 1.18;
-    text-shadow: 0 4px 28px rgba(3, 0, 20, 0.75);
 }
 
 .hero > p:not(.hero-name) {
-    max-width: 920px;
+    max-width: var(--paragraph-width);
     margin: 0 auto;
-    color: rgba(244, 241, 255, 0.86);
-    font-size: 1.08rem;
-    line-height: 1.7;
-}
-
-.hero-intro {
-    text-shadow: 0 4px 24px rgba(3, 0, 20, 0.78);
+    color: var(--color-muted);
+    font-size: inherit;
+    line-height: inherit;
 }
 
 .hero-skill-grid {
@@ -332,7 +414,7 @@ li {
     color: rgba(255, 255, 255, 0.94);
     background:
         radial-gradient(circle at 20% 18%, rgba(255, 255, 255, 0.12), transparent 34%),
-        rgba(24, 18, 58, 0.52);
+        #1b232e;
     box-shadow:
         0 10px 26px rgba(3, 0, 20, 0.2),
         inset 0 1px 0 rgba(255, 255, 255, 0.12);
@@ -346,31 +428,17 @@ li {
 }
 
 section {
-    max-width: 1180px;
-    margin: 24px auto;
-    padding: 80px 40px;
-    scroll-margin-top: 84px;
-    border: 1px solid rgba(218, 208, 255, 0.17);
-    border-radius: 24px;
-    box-sizing: border-box;
-    background: rgba(8, 6, 28, 0.27);
-    box-shadow: 0 24px 70px rgba(3, 0, 20, 0.22);
-    backdrop-filter: blur(7px);
-    -webkit-backdrop-filter: blur(7px);
+    margin-block: 0;
+    padding-block: var(--section-padding);
+    scroll-margin-top: 6rem;
 }
 
 .navbar + section {
-    margin-top: 100px;
-}
-
-section h1,
-section h2,
-section h3 {
-    text-shadow: 0 2px 16px rgba(3, 0, 20, 0.72);
+    margin-top: 6rem;
 }
 
 a {
-    color: #d9ceff;
+    color: var(--color-accent);
 }
 
 /* Buttons */
@@ -396,7 +464,8 @@ a {
 }
 
 .skill-card {
-    background: linear-gradient(145deg, rgba(31, 23, 66, 0.48), rgba(8, 6, 28, 0.32));
+    color: #f8f7ff;
+    background: linear-gradient(145deg, rgba(31, 23, 66, 0.48), rgba(8, 6, 28, 0.32)), #11161d;
     padding: 25px;
     border-radius: 10px;
     transition: 0.3s ease;
@@ -421,72 +490,78 @@ a {
 
 .contact-intro p {
     margin-top: 0;
-    color: rgba(248, 247, 255, 0.9);
-    font-size: 1.05rem;
-    line-height: 1.7;
+    color: var(--color-text);
+    font-size: inherit;
+    line-height: inherit;
 }
 
-.contact-note {
-    color: rgba(218, 208, 255, 0.72);
-    font-size: 0.95rem;
+/* Contact uses the shared palette in both colour schemes. */
+.contact-intro .contact-note,
+.contact-required {
+    color: var(--color-muted);
+    font-size: 0.875rem;
+}
+
+.contact-email {
+    display: inline-block;
+    margin-bottom: var(--space-3);
+    padding-block: var(--space-1);
+    font-weight: 600;
+    overflow-wrap: anywhere;
+    text-underline-offset: 0.25em;
 }
 
 .contact-form {
     display: grid;
-    gap: 12px;
-    padding: 24px;
-    border: 1px solid rgba(218, 208, 255, 0.2);
-    border-radius: 18px;
-    background: rgba(8, 6, 28, 0.3);
-    box-shadow: 0 18px 46px rgba(3, 0, 20, 0.2);
+    gap: var(--space-2);
+    padding: var(--card-padding);
+    border: var(--card-border);
+    border-radius: var(--card-radius);
+    background: var(--color-surface);
+}
+
+.contact-required {
+    margin: 0;
 }
 
 .contact-form label {
     font-weight: 600;
-    color: rgba(248, 247, 255, 0.92);
+    color: var(--color-text);
 }
 
 .contact-form input,
 .contact-form textarea {
     width: 100%;
-    box-sizing: border-box;
-    border: 1px solid rgba(218, 208, 255, 0.24);
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.08);
-    color: white;
+    min-width: 0;
+    min-height: 48px;
+    border: 1px solid var(--color-muted);
+    border-radius: 0.75rem;
+    background: var(--color-background);
+    color: var(--color-text);
     font: inherit;
-    padding: 12px 14px;
-    outline: none;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    padding: var(--space-2);
 }
 
 .contact-form textarea {
     resize: vertical;
-    min-height: 140px;
+    min-height: 160px;
 }
 
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
-    color: rgba(248, 247, 255, 0.46);
+    color: var(--color-muted);
+    opacity: 1;
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
-    border-color: rgba(225, 216, 255, 0.78);
-    background: rgba(255, 255, 255, 0.12);
-    box-shadow: 0 0 0 3px rgba(170, 145, 255, 0.18);
+#contact :focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 4px;
 }
 
 .contact-submit {
     justify-self: start;
-    margin-top: 8px;
-}
-
-.form-status {
-    display: none;
-    margin: 0;
-    color: rgba(255, 224, 166, 0.92);
-    font-size: 0.95rem;
+    margin-top: var(--space-1);
+    cursor: pointer;
 }
 
 .chat-widget {
@@ -695,7 +770,7 @@ a {
 @keyframes star-twinkle {
     0%,
     100% {
-        opacity: 0.55;
+        opacity: 0.75;
     }
 
     50% {
@@ -738,11 +813,10 @@ a {
 
     .hero {
         margin-top: 78px;
-        padding: 42px 16px 56px;
     }
 
     .hero-name {
-        font-size: clamp(3.1rem, 15vw, 4.8rem);
+        font-size: clamp(2.75rem, 8vw, 5.5rem);
     }
 
     .hero h1 {
@@ -760,18 +834,8 @@ a {
         font-size: 0.82rem;
     }
 
-    section {
-        margin: 14px 12px;
-        padding: 52px 20px;
-        border-radius: 18px;
-    }
-
     .contact-layout {
         grid-template-columns: 1fr;
-    }
-
-    .contact-form {
-        padding: 20px;
     }
 
     .chat-widget {
@@ -787,4 +851,563 @@ a {
         padding: 18px;
         border-radius: 20px;
     }
+}
+
+
+/* Step 2: flat navigation and portfolio introduction. */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--nav-height, 10rem);
+}
+
+.portfolio-nav {
+    position: sticky;
+    flex-wrap: wrap;
+    gap: var(--space-2) var(--space-4);
+    padding: var(--space-2) max(var(--page-gutter), calc((100% - var(--container-width)) / 2));
+    background: var(--color-panel);
+    border-bottom: var(--card-border);
+    box-shadow: none;
+}
+
+.portfolio-nav .nav-left {
+    flex-wrap: wrap;
+    gap: var(--space-1) var(--space-3);
+}
+
+.portfolio-nav .nav-left a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    color: var(--color-text);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.portfolio-nav .nav-left a:hover {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 0.25em;
+}
+
+.portfolio-nav .lang-switch button {
+    min-width: 44px;
+    min-height: 44px;
+    color: var(--color-text);
+    border-color: var(--color-muted);
+    background: var(--color-surface);
+}
+
+.portfolio-nav .lang-switch button[aria-pressed="true"] {
+    color: var(--color-on-accent);
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+.portfolio-nav :focus-visible,
+.portfolio-button:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 4px;
+}
+
+.portfolio-hero {
+    margin-top: 0;
+    text-align: left;
+    animation: none;
+}
+
+.portfolio-hero .hero-name {
+    margin-block: var(--space-2) var(--space-3);
+    font-size: clamp(2.75rem, 8vw, 5.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+    text-transform: none;
+}
+
+.portfolio-hero > p:not(.hero-name) {
+    margin-inline: 0;
+}
+
+.portfolio-hero > .hero-value {
+    max-width: 48ch;
+    color: var(--color-text);
+    font-size: clamp(1.25rem, 1rem + 1vw, 1.75rem);
+    line-height: 1.5;
+}
+
+.portfolio-hero > .eyebrow {
+    font-size: 0.8125rem;
+}
+
+.hero-chips,
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1);
+    margin-block: var(--space-4);
+    padding: 0;
+    list-style: none;
+}
+
+.hero-chips li {
+    margin: 0;
+    padding: var(--space-1) var(--space-2);
+    border: var(--card-border);
+    border-radius: 999px;
+    background: var(--color-surface);
+    font-size: 0.875rem;
+}
+
+.hero-actions {
+    gap: var(--space-2);
+    margin-bottom: var(--space-1);
+}
+
+.portfolio-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-2) var(--space-3);
+    min-height: 48px;
+    border: 1px solid var(--color-accent);
+    border-radius: 0.75rem;
+    color: var(--color-accent);
+    background: var(--color-surface);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.portfolio-button--primary {
+    color: var(--color-on-accent);
+    background: var(--color-accent);
+}
+
+.portfolio-button:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.25em;
+}
+
+.hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-4);
+    margin: var(--space-6) 0 0;
+    padding-top: var(--space-4);
+    border-top: var(--card-border);
+}
+
+.hero-stats > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-stats dt {
+    color: var(--color-muted);
+    font-size: 0.875rem;
+}
+
+.hero-stats dd {
+    order: -1;
+    margin: 0 0 var(--space-1);
+    font-size: clamp(1.25rem, 2vw, 1.75rem);
+    font-weight: 700;
+}
+
+.portfolio-nav + section {
+    margin-top: 0;
+}
+
+section {
+    scroll-margin-top: var(--space-2);
+}
+
+@media (max-width: 480px) {
+    .hero-stats { grid-template-columns: 1fr; }
+    .hero-actions > * { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+}
+
+/* Step 3: project evidence, with demos visible in each card. */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-3);
+    margin-top: var(--space-3);
+}
+
+.project-card {
+    min-width: 0;
+    padding: var(--card-padding);
+    border: var(--card-border);
+    border-radius: var(--card-radius);
+    background: var(--color-surface);
+}
+
+.project-card--featured {
+    border-top: 3px solid var(--color-accent);
+}
+
+.project-card-top,
+.project-chips,
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.project-card-top {
+    justify-content: space-between;
+    margin-bottom: var(--space-3);
+}
+
+.project-card-top .eyebrow {
+    margin: 0;
+}
+
+.project-status {
+    display: inline-block;
+    padding: var(--space-1) var(--space-2);
+    border: var(--card-border);
+    border-radius: 999px;
+    color: var(--color-muted);
+    font-size: 0.8125rem;
+}
+
+.project-grid h3 {
+    margin-top: var(--space-3);
+}
+
+.project-card--featured h3 {
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+.project-outcome {
+    color: var(--color-muted);
+}
+
+.project-chips {
+    list-style: none;
+    padding: 0;
+    margin-block: var(--space-3) var(--space-4);
+    gap: var(--space-1);
+}
+
+.project-chips li {
+    margin: 0;
+    padding: var(--space-1) var(--space-2);
+    background: var(--color-background);
+    border: var(--card-border);
+    border-radius: 0.5rem;
+    font-size: 0.8125rem;
+}
+
+.project-feature-media {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: var(--space-4);
+    align-items: start;
+}
+
+.project-card figure {
+    min-width: 0;
+    margin: 0;
+}
+
+.project-card figcaption {
+    margin-bottom: var(--space-2);
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.project-workflow {
+    list-style: none;
+    counter-reset: workflow;
+    padding: 0;
+    margin: 0 0 var(--space-3);
+}
+
+.project-workflow li {
+    counter-increment: workflow;
+    position: relative;
+    margin: 0 0 var(--space-2);
+    padding: var(--space-1) var(--space-2);
+    border: var(--card-border);
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.project-workflow li::before {
+    content: counter(workflow) ". ";
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+    font-weight: 600;
+}
+
+.project-workflow li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    left: var(--space-3);
+    top: 100%;
+    height: var(--space-2);
+    border-left: 2px solid var(--color-accent);
+}
+
+.project-demo video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+    background: #11161d;
+    border: var(--card-border);
+    border-radius: 0.75rem;
+}
+
+.project-demo > a {
+    display: inline-block;
+    padding-block: var(--space-1);
+    font-size: 0.8125rem;
+}
+
+.project-links {
+    margin-top: var(--space-3);
+}
+
+.project-links a {
+    padding-block: var(--space-1);
+    font-weight: 600;
+    text-underline-offset: 0.25em;
+}
+
+.project-card :focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 4px;
+}
+
+@media (max-width: 768px) {
+    .project-grid,
+    .project-feature-media {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Step 4: dates and role evidence share a responsive timeline. */
+.experience-timeline {
+    list-style: none;
+    margin: var(--space-4) 0 0;
+    padding: 0;
+}
+
+.timeline-entry {
+    display: grid;
+    grid-template-columns: 11rem minmax(0, 1fr);
+    gap: var(--space-4);
+    margin: 0;
+    padding-block: var(--space-4);
+    border-top: var(--card-border);
+}
+
+.timeline-date {
+    margin: 0;
+    color: var(--color-muted);
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    font-variant-numeric: tabular-nums;
+}
+
+.timeline-content {
+    min-width: 0;
+    padding-left: var(--space-3);
+    border-left: 2px solid var(--color-accent);
+}
+
+.timeline-content h3 {
+    margin-bottom: var(--space-1);
+}
+
+.timeline-organization {
+    margin-bottom: var(--space-2);
+    color: var(--color-muted);
+    font-size: 0.9375rem;
+}
+
+.timeline-content ul {
+    max-width: var(--paragraph-width);
+    margin: 0;
+    padding-left: var(--space-3);
+    line-height: var(--line-height-body);
+}
+
+.timeline-content li:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 640px) {
+    .timeline-entry {
+        grid-template-columns: 1fr;
+        gap: var(--space-2);
+    }
+}
+
+
+/* Step 5: four scannable skill groups. */
+.skill-groups {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-3);
+    margin-top: var(--space-4);
+}
+
+.skill-group {
+    min-width: 0;
+    padding: var(--card-padding);
+    border: var(--card-border);
+    border-radius: var(--card-radius);
+    background: var(--color-surface);
+}
+
+.skill-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skill-chips li {
+    max-width: 100%;
+    margin: 0;
+    padding: var(--space-1) var(--space-2);
+    border: var(--card-border);
+    border-radius: 0.5rem;
+    background: var(--color-background);
+    font-size: 0.875rem;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 768px) {
+    .skill-groups { grid-template-columns: 1fr; }
+}
+
+
+/* Galaxy artwork: open hero and translucent reading panels. */
+main {
+    padding-block: var(--space-4) var(--space-12);
+}
+
+main > section {
+    padding-inline: var(--card-padding);
+    background: var(--color-panel);
+    border: var(--card-border);
+    border-radius: var(--card-radius);
+    margin-block: 0 var(--space-4);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+}
+
+.skip-link {
+    position: fixed;
+    top: var(--space-2);
+    left: var(--space-2);
+    z-index: 2000;
+    padding: var(--space-2);
+    background: var(--color-surface);
+    color: var(--color-accent);
+    transform: translateY(-200%);
+}
+
+.skip-link:focus { transform: translateY(0); }
+
+:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 4px;
+}
+
+.project-detail h2 {
+    margin-top: var(--space-4);
+    font-size: var(--text-h3);
+}
+
+.project-detail video {
+    width: 100%;
+    max-width: 900px;
+    aspect-ratio: 16 / 9;
+    background: #11161d;
+}
+
+.project-detail .project-workflow { max-width: var(--paragraph-width); }
+
+.chat-toggle,
+.chat-panel,
+.chat-bubble,
+.chat-action,
+.chat-action--primary,
+.chat-close {
+    color: var(--color-text);
+    background: var(--color-surface);
+    border: 1px solid var(--color-muted);
+    box-shadow: none;
+    backdrop-filter: none;
+}
+
+.chat-panel__eyebrow,
+.chat-contact-link { color: var(--color-muted); }
+
+.chat-toggle:hover,
+.chat-toggle:focus-visible,
+.chat-action:hover,
+.chat-action:focus-visible,
+.chat-close:hover,
+.chat-close:focus-visible {
+    color: var(--color-on-accent);
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    box-shadow: none;
+    outline: 3px solid var(--color-accent);
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+
+.portfolio-hero {
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    text-align: center;
+}
+
+.portfolio-hero > p:not(.hero-name) { margin-inline: auto; }
+
+.portfolio-hero .hero-name {
+    font-size: clamp(3rem, 10vw, 7rem);
+    letter-spacing: 0.04em;
+    text-transform: none;
+}
+
+.portfolio-hero .hero-chips,
+.portfolio-hero .hero-actions { justify-content: center; }
+
+.hero-chips li,
+.project-chips li,
+.skill-chips li,
+.contact-form input,
+.contact-form textarea {
+    background: var(--color-surface);
+}
+
+.chat-panel {
+    background: rgba(8, 11, 28, 0.95);
 }

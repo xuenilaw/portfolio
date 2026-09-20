@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Xueni Law</title>
+  <rect width="64" height="64" rx="16" fill="#0b1028"/>
+  <g fill="none" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M8 25V47H18" stroke="#fff"/>
+    <path d="M22 47 29 25 36 47M25 39H33" stroke="#fff"/>
+    <path d="M39 25 42 47 48 34 54 47 57 25" stroke="#b7ceff"/>
+  </g>
+  <path d="m51 4 2.5 6.5L60 13l-6.5 2.5L51 22l-2.5-6.5L42 13l6.5-2.5Z" fill="#b7ceff"/>
+</svg>

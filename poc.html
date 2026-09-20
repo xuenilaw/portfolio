@@ -1,146 +1,109 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PoC Project</title>
-    <link rel="stylesheet" href="style.css?v=20260912">
+    <title data-de="Appium-Projekt | Xueni Law" data-en="Appium project | Xueni Law">Appium-Projekt | Xueni Law</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=2">
+    <link rel="stylesheet" href="style.css?v=20260920-stars">
 </head>
 
 <body>
-    <nav class="navbar">
+    <a class="skip-link" href="#main-content" data-de="Zum Inhalt springen" data-en="Skip to content">Zum Inhalt springen</a>
+    <nav class="navbar portfolio-nav" aria-label="Hauptnavigation" data-aria-label-de="Hauptnavigation" data-aria-label-en="Main navigation">
         <div class="nav-left">
-
-            <!-- Dropdown ME -->
-            <div class="dropdown">
-                <button class="dropbtn">Me ▾</button>
-                <div class="dropdown-content">
-                    <a href="index.html#about" data-de="Über mich" data-en="About">About</a>
-                    <a href="index.html#experience" data-de="Berufserfahrung" data-en="Experience">Experience</a>
-                    <a href="index.html#skills" data-de="Fähigkeiten" data-en="Skills">Skills</a>
-                    <a href="index.html#contact" data-de="Kontakt" data-en="Contact">Contact</a>
-                </div>
-            </div>
-
-            <!-- Dropdown PROJECT -->
-            <div class="dropdown">
-                <button class="dropbtn">Projekt ▾</button>
-                <div class="dropdown-content">
-                    <a href="ai-test.html" data-de="AI-Test" data-en="AI-Test">AI-Test</a>
-                    <a href="poc_rf.html" data-de="PoC Robot Framework" data-en="PoC Robot Framework">PoC Robot Framework</a>
-                </div>
-            </div>
-
+            <a href="index.html#projects" data-de="Projekte" data-en="Projects">Projekte</a>
+            <a href="index.html#experience" data-de="Berufserfahrung" data-en="Experience">Berufserfahrung</a>
+            <a href="index.html#skills" data-de="Fähigkeiten" data-en="Skills">Fähigkeiten</a>
+            <a href="index.html#about" data-de="Über mich" data-en="About">Über mich</a>
+            <a href="index.html#contact" data-de="Kontakt" data-en="Contact">Kontakt</a>
         </div>
 
         <!-- Language Switch -->
         <div class="lang-switch">
-            <button onclick="setLanguage('de')">DE</button>
-            <button onclick="setLanguage('en')">EN</button>
+            <button id="btn-de" data-language="de" aria-pressed="true" onclick="setLanguage('de')">DE</button>
+            <button id="btn-en" data-language="en" aria-pressed="false" onclick="setLanguage('en')">EN</button>
             <a class="linkedin-link" href="https://www.linkedin.com/in/xue-ni-law-9b57a183/" target="_blank"
-                rel="noopener noreferrer" aria-label="LinkedIn profile" title="LinkedIn">
+                rel="noopener noreferrer" aria-label="LinkedIn-Profil" data-aria-label-de="LinkedIn-Profil" data-aria-label-en="LinkedIn profile" title="LinkedIn">
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M6.5 8.3H3.2V19h3.3V8.3ZM4.9 3A1.9 1.9 0 1 0 5 6.8 1.9 1.9 0 0 0 4.9 3ZM19 12.9c0-3.2-1.7-4.9-4.1-4.9a3.6 3.6 0 0 0-3.3 1.8V8.3H8.3V19h3.3v-5.3c0-1.4.3-2.8 2.1-2.8 1.8 0 1.9 1.7 1.9 2.9V19H19v-6.1Z"/>
                 </svg>
             </a>
         </div>
     </nav>
-    <section>
-        <h1>Proof of Concept — Appium Test Automation in Android Automotive</h1>
+    <main id="main-content" tabindex="-1">
+    <section class="project-detail">
+        <h1 data-de="Machbarkeitsstudie — Appium-Testautomatisierung für Android Automotive" data-en="Proof of concept — Appium test automation for Android Automotive">Machbarkeitsstudie — Appium-Testautomatisierung für Android Automotive</h1>
 
-        <h2 data-de="Überblick" data-en="Overview">Overview</h2>
-        <li>
-            <strong data-de="Ziel:" data-en="Goal:">Goal:</strong>
+        <h2 data-de="Überblick" data-en="Overview">Überblick</h2>
+        <p>
+            <strong data-de="Ziel:" data-en="Goal:">Ziel:</strong>
             <span
                 data-de=" Dieser Proof of Concept zeigt UI-Testautomatisierung für Android Automotive mit Appium. Hauptziel ist zu belegen, dass zentrale Infotainment- und Navigationsinteraktionen—z. B. Touch-Eingaben, Bildschirmnavigation und suchbezogene UI-Flows—auf einem Automotive-Android-Ziel wiederholbar und unter realitätsnahen Bedingungen geprüft werden können."
-                data-en=" This proof of concept demonstrates UI test automation for Android Automotive using Appium. The main objective is to show that critical infotainment and navigation interactions—such as touch input, screen navigation, and search-related UI flows—can be exercised and checked repeatably on an automotive Android target under conditions close to real in-vehicle use.">
-                This proof of concept demonstrates UI test automation for Android Automotive using Appium. The main
-                objective is to show that critical infotainment and navigation interactions—such as touch input, screen
-                navigation, and search-related UI flows—can be exercised and checked repeatably on an automotive Android
-                target under conditions close to real in-vehicle use.
-            </span>
-        </li>
-        <li>
-            <strong data-de="Demo-Inhalt:" data-en="What the demo shows:">What the demo shows:</strong>
+                data-en=" This proof of concept demonstrates UI test automation for Android Automotive using Appium. The main objective is to show that critical infotainment and navigation interactions—such as touch input, screen navigation, and search-related UI flows—can be exercised and checked repeatably on an automotive Android target under conditions close to real in-vehicle use."> Dieser Proof of Concept zeigt UI-Testautomatisierung für Android Automotive mit Appium. Hauptziel ist zu belegen, dass zentrale Infotainment- und Navigationsinteraktionen—z. B. Touch-Eingaben, Bildschirmnavigation und suchbezogene UI-Flows—auf einem Automotive-Android-Ziel wiederholbar und unter realitätsnahen Bedingungen geprüft werden können.</span>
+        </p>
+        <p>
+            <strong data-de="Demo-Inhalt:" data-en="What the demo shows:">Demo-Inhalt:</strong>
             <span
                 data-de=" Die Aufnahme führt einen automatisierten UI-Testlauf in einer Android-Automotive-Umgebung (Emulator oder Gerät) vor. Appium steuert die Oberfläche: Der Test startet die Anwendung, führt typische Nutzeraktionen aus (z. B. Bedienelemente antippen, Sucheingaben, Navigation zwischen Screens) und prüft die erwarteten UI-Ergebnisse—von der Testausführung bis zum sichtbaren Ergebnis auf dem HMI."
-                data-en=" The recording walks through an automated UI test run against an Android Automotive environment (emulator or device). Appium drives the UI: the test launches the application, performs typical user actions (for example tapping controls, entering search input, navigating screens), and verifies expected UI outcomes—from test execution to visible results on the HMI.">
-                The recording walks through an automated UI test run against an Android Automotive environment (emulator
-                or device). Appium drives the UI: the test launches the application, performs typical user actions (for
-                example tapping controls, entering search input, navigating screens), and verifies expected UI
-                outcomes—from test execution to visible results on the HMI.
-            </span>
-        </li>
+                data-en=" The recording walks through an automated UI test run against an Android Automotive environment (emulator or device). Appium drives the UI: the test launches the application, performs typical user actions (for example tapping controls, entering search input, navigating screens), and verifies expected UI outcomes—from test execution to visible results on the HMI."> Die Aufnahme führt einen automatisierten UI-Testlauf in einer Android-Automotive-Umgebung (Emulator oder Gerät) vor. Appium steuert die Oberfläche: Der Test startet die Anwendung, führt typische Nutzeraktionen aus (z. B. Bedienelemente antippen, Sucheingaben, Navigation zwischen Screens) und prüft die erwarteten UI-Ergebnisse—von der Testausführung bis zum sichtbaren Ergebnis auf dem HMI.</span>
+        </p>
 
-        <h2 data-de="Technologie-Stack" data-en="Technology stack">Technology stack</h2>
-        <li>
+        <h2 data-de="Technologie-Stack" data-en="Technology stack">Technologie-Stack</h2>
+        <p>
             <strong data-de="Tool:" data-en="Tool:">Tool:</strong>
-            <span data-de=" Appium (Mobile-UI-Automatisierung)." data-en=" Appium (mobile UI automation).">
-                Appium (mobile UI automation).
-            </span>
-        </li>
-        <li>
-            <strong data-de="Zielplattform:" data-en="Target platform:">Target platform:</strong>
-            <span data-de=" Android Automotive." data-en=" Android Automotive.">
-                Android Automotive.
-            </span>
-        </li>
-        <li>
-            <strong data-de="Fokus:" data-en="Scope:">Scope:</strong>
+            <span data-de=" Appium (Mobile-UI-Automatisierung)." data-en=" Appium (mobile UI automation)."> Appium (Mobile-UI-Automatisierung).</span>
+        </p>
+        <p>
+            <strong data-de="Zielplattform:" data-en="Target platform:">Zielplattform:</strong>
+            <span data-de=" Android Automotive." data-en=" Android Automotive."> Android Automotive.</span>
+        </p>
+        <p>
+            <strong data-de="Fokus:" data-en="Scope:">Fokus:</strong>
             <span
                 data-de=" UI-Testautomatisierung (UI TA) für HMI-/Navigationsanwendungen."
-                data-en=" UI test automation (UI TA) for HMI and navigation-style applications.">
-                UI test automation (UI TA) for HMI and navigation-style applications.
-            </span>
-        </li>
-        <li>
-            <strong data-de="Zweck:" data-en="Purpose:">Purpose:</strong>
+                data-en=" UI test automation (UI TA) for HMI and navigation-style applications."> UI-Testautomatisierung (UI TA) für HMI-/Navigationsanwendungen.</span>
+        </p>
+        <p>
+            <strong data-de="Zweck:" data-en="Purpose:">Zweck:</strong>
             <span
                 data-de=" Nachweis der Automatisierungsfähigkeit ergänzend zu manuellen und Systemtests."
-                data-en=" Proof of automation feasibility alongside manual and system-level testing.">
-                Proof of automation feasibility alongside manual and system-level testing.
-            </span>
-        </li>
+                data-en=" Proof of automation feasibility alongside manual and system-level testing."> Nachweis der Automatisierungsfähigkeit ergänzend zu manuellen und Systemtests.</span>
+        </p>
 
-        <h2 data-de="Demo-Video" data-en="Demo video">Demo video</h2>
+        <h2 data-de="Demo-Video" data-en="Demo video">Demo-Video</h2>
         <div class="video-container">
-            <video controls width="80%">
+            <video controls playsinline preload="metadata" aria-label="Projekt-Demo" data-aria-label-de="Projekt-Demo" data-aria-label-en="Project demo">
                 <source src="video/UI_TA_Appium_Demo_AndroidA.mp4" type="video/mp4">
-                Your browser does not support the video tag.
+                <span data-de="Ihr Browser unterstützt dieses Video nicht." data-en="Your browser does not support this video.">Ihr Browser unterstützt dieses Video nicht.</span>
             </video>
         </div>
 
-        <h2 data-de="Warum Appium?" data-en="Why Appium?">Why Appium?</h2>
-        <li>
-            <strong data-de="Plattformpassung:" data-en="Platform fit:">Platform fit:</strong>
+        <h2 data-de="Warum Appium?" data-en="Why Appium?">Warum Appium?</h2>
+        <p>
+            <strong data-de="Plattformpassung:" data-en="Platform fit:">Plattformpassung:</strong>
             <span
                 data-de=" Appium eignet sich für Android-UI-Automatisierung und passt zu touchbasierten Automotive-HMIs."
-                data-en=" Appium is widely used for Android UI automation and maps well to touch-based automotive HMIs.">
-                Appium is widely used for Android UI automation and maps well to touch-based automotive HMIs.
-            </span>
-        </li>
-        <li>
-            <strong data-de="Skill-Transfer:" data-en="Skill reuse:">Skill reuse:</strong>
+                data-en=" Appium is widely used for Android UI automation and maps well to touch-based automotive HMIs."> Appium eignet sich für Android-UI-Automatisierung und passt zu touchbasierten Automotive-HMIs.</span>
+        </p>
+        <p>
+            <strong data-de="Kompetenztransfer:" data-en="Skill reuse:">Kompetenztransfer:</strong>
             <span
                 data-de=" Ergänzt weiterführende Automatisierungs-PoCs (z. B. Robot Framework im Web) und zeigt einen Weg von Web- zu Fahrzeug-UI-Tests."
-                data-en=" Complements broader automation work (for example Robot Framework on the web PoC) and shows a path from web to in-vehicle UI testing.">
-                Complements broader automation work (for example Robot Framework on the web PoC) and shows a path from
-                web to in-vehicle UI testing.
-            </span>
-        </li>
-        <li>
-            <strong data-de="Nutzen fürs Team:" data-en="Stakeholder value:">Stakeholder value:</strong>
+                data-en=" Complements broader automation work (for example Robot Framework on the web PoC) and shows a path from web to in-vehicle UI testing."> Ergänzt weiterführende Automatisierungs-PoCs (z. B. Robot Framework im Web) und zeigt einen Weg von Web- zu Fahrzeug-UI-Tests.</span>
+        </p>
+        <p>
+            <strong data-de="Nutzen fürs Team:" data-en="Stakeholder value:">Nutzen fürs Team:</strong>
             <span
                 data-de=" Eine kurze Demo macht Automatisierung greifbar für Teams, die Teststrategien für komplexe Navigationssysteme bewerten."
-                data-en=" A short demo makes automation tangible for teams evaluating test strategy for complex navigation systems.">
-                A short demo makes automation tangible for teams evaluating test strategy for complex navigation systems.
-            </span>
-        </li>
+                data-en=" A short demo makes automation tangible for teams evaluating test strategy for complex navigation systems."> Eine kurze Demo macht Automatisierung greifbar für Teams, die Teststrategien für komplexe Navigationssysteme bewerten.</span>
+        </p>
 
-        <a href="index.html">← Back</a>
+        <a href="index.html#projects" data-de="← Zurück zu den Projekten" data-en="← Back to projects">← Zurück zu den Projekten</a>
     </section>
-    <script src="script.js?v=20260912"></script>
+    </main>
+    <script src="script.js?v=20260920-stars"></script>
 </body>
 
 </html>

@@ -1,127 +1,97 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PoC Project</title>
-    <link rel="stylesheet" href="style.css?v=20260912">
+    <title data-de="Robot-Framework-Projekt | Xueni Law" data-en="Robot Framework project | Xueni Law">Robot-Framework-Projekt | Xueni Law</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=2">
+    <link rel="stylesheet" href="style.css?v=20260920-stars">
 </head>
 
 <body>
-    <nav class="navbar">
+    <a class="skip-link" href="#main-content" data-de="Zum Inhalt springen" data-en="Skip to content">Zum Inhalt springen</a>
+    <nav class="navbar portfolio-nav" aria-label="Hauptnavigation" data-aria-label-de="Hauptnavigation" data-aria-label-en="Main navigation">
         <div class="nav-left">
-
-            <!-- Dropdown ME -->
-            <div class="dropdown">
-                <button class="dropbtn">Me ▾</button>
-                <div class="dropdown-content">
-                    <a href="index.html#about" data-de="Über mich" data-en="About">About</a>
-                    <a href="index.html#experience" data-de="Berufserfahrung" data-en="Experience">Experience</a>
-                    <a href="index.html#skills" data-de="Fähigkeiten" data-en="Skills">Skills</a>
-                    <a href="index.html#contact" data-de="Kontakt" data-en="Contact">Contact</a>
-                </div>
-            </div>
-
-            <!-- Dropdown PROJECT -->
-            <div class="dropdown">
-                <button class="dropbtn">Projekt ▾</button>
-                <div class="dropdown-content">
-                    <a href="ai-test.html" data-de="AI-Test" data-en="AI-Test">AI-Test</a>
-                    <a href="poc_rf.html" data-de="PoC Robot Framework" data-en="PoC Robot Framework">PoC Robot Framework</a>
-                </div>
-            </div>
-
+            <a href="index.html#projects" data-de="Projekte" data-en="Projects">Projekte</a>
+            <a href="index.html#experience" data-de="Berufserfahrung" data-en="Experience">Berufserfahrung</a>
+            <a href="index.html#skills" data-de="Fähigkeiten" data-en="Skills">Fähigkeiten</a>
+            <a href="index.html#about" data-de="Über mich" data-en="About">Über mich</a>
+            <a href="index.html#contact" data-de="Kontakt" data-en="Contact">Kontakt</a>
         </div>
 
         <!-- Language Switch -->
         <div class="lang-switch">
-            <button onclick="setLanguage('de')">DE</button>
-            <button onclick="setLanguage('en')">EN</button>
+            <button data-language="de" aria-pressed="true" onclick="setLanguage('de')">DE</button>
+            <button data-language="en" aria-pressed="false" onclick="setLanguage('en')">EN</button>
             <a class="linkedin-link" href="https://www.linkedin.com/in/xue-ni-law-9b57a183/" target="_blank"
-                rel="noopener noreferrer" aria-label="LinkedIn profile" title="LinkedIn">
+                rel="noopener noreferrer" aria-label="LinkedIn-Profil" data-aria-label-de="LinkedIn-Profil" data-aria-label-en="LinkedIn profile" title="LinkedIn">
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M6.5 8.3H3.2V19h3.3V8.3ZM4.9 3A1.9 1.9 0 1 0 5 6.8 1.9 1.9 0 0 0 4.9 3ZM19 12.9c0-3.2-1.7-4.9-4.1-4.9a3.6 3.6 0 0 0-3.3 1.8V8.3H8.3V19h3.3v-5.3c0-1.4.3-2.8 2.1-2.8 1.8 0 1.9 1.7 1.9 2.9V19H19v-6.1Z"/>
                 </svg>
             </a>
         </div>
     </nav>
-    <section>
-        <h1>Proof of Concept — Robot Framework + Selenium</h1>
+    <main id="main-content" tabindex="-1">
+    <section class="project-detail">
+        <h1 data-de="Machbarkeitsstudie — Robot Framework + Selenium" data-en="Proof of concept — Robot Framework + Selenium">Machbarkeitsstudie — Robot Framework + Selenium</h1>
 
-        <h2 data-de="Überblick" data-en="Overview">Overview</h2>
-        <li>
-            <strong data-de="Ziel:" data-en="Goal:">Goal:</strong>
+        <h2 data-de="Überblick" data-en="Overview">Überblick</h2>
+        <p>
+            <strong data-de="Ziel:" data-en="Goal:">Ziel:</strong>
             <span
                 data-de=" Dieser Proof of Concept demonstriert eine effiziente und skalierbare Automatisierungslösung für Infotainment- und Navigationssysteme. Das Hauptziel ist die Validierung von Suchfunktionen (POI) und UI-Interaktionen unter realitätsnahen Bedingungen."
-                data-en=" This proof of concept demonstrates an efficient, scalable automation approach for infotainment and navigation systems. The main objective is to validate search functions (POIs) and UI interactions under realistic conditions.">
-                This proof of concept demonstrates an efficient, scalable automation approach for infotainment and
-                navigation systems. The main objective is to validate search functions (POIs) and UI interactions under
-                realistic conditions.
-            </span>
-        </li>
+                data-en=" This proof of concept demonstrates an efficient, scalable automation approach for infotainment and navigation systems. The main objective is to validate search functions (POIs) and UI interactions under realistic conditions."> Dieser Proof of Concept demonstriert eine effiziente und skalierbare Automatisierungslösung für Infotainment- und Navigationssysteme. Das Hauptziel ist die Validierung von Suchfunktionen (POI) und UI-Interaktionen unter realitätsnahen Bedingungen.</span>
+        </p>
 
-        <h2 data-de="Technologie-Stack" data-en="Technology stack">Technology stack</h2>
-        <li>
+        <h2 data-de="Technologie-Stack" data-en="Technology stack">Technologie-Stack</h2>
+        <p>
             <strong data-de="Framework:" data-en="Framework:">Framework:</strong>
-            <span data-de=" Robot Framework (Keyword-Driven)." data-en=" Robot Framework (keyword-driven).">
-                Robot Framework (keyword-driven).
-            </span>
-        </li>
-        <li>
-            <strong data-de="Libraries:" data-en="Libraries:">Libraries:</strong>
+            <span data-de=" Robot Framework (schlüsselwortbasiert)." data-en=" Robot Framework (keyword-driven)."> Robot Framework (schlüsselwortbasiert).</span>
+        </p>
+        <p>
+            <strong data-de="Bibliotheken:" data-en="Libraries:">Bibliotheken:</strong>
             <span
                 data-de=" Selenium (Web-Integration); perspektivisch Appium (Mobile/Android Automotive)."
-                data-en=" Selenium (web integration); Appium for mobile/Android Automotive is planned for the future.">
-                Selenium (web integration); Appium for mobile/Android Automotive is planned for the future.
-            </span>
-        </li>
-        <li>
-            <strong data-de="Methodik:" data-en="Methodology:">Methodology:</strong>
-            <span data-de=" Data-Driven Testing (DDT) über CSV/Excel." data-en=" Data-driven testing (DDT) using CSV/Excel.">
-                Data-driven testing (DDT) using CSV/Excel.
-            </span>
-        </li>
+                data-en=" Selenium (web integration); Appium for mobile/Android Automotive is planned for the future."> Selenium (Web-Integration); perspektivisch Appium (Mobile/Android Automotive).</span>
+        </p>
+        <p>
+            <strong data-de="Methodik:" data-en="Methodology:">Methodik:</strong>
+            <span data-de=" Datengetriebene Tests (DDT) über CSV/Excel." data-en=" Data-driven testing (DDT) using CSV/Excel."> Datengetriebene Tests (DDT) über CSV/Excel.</span>
+        </p>
 
-        <h2 data-de="Demo-Video" data-en="Demo video">Demo video</h2>
+        <h2 data-de="Demo-Video" data-en="Demo video">Demo-Video</h2>
         <div class="video-container">
-            <video controls width="80%">
+            <video controls playsinline preload="metadata" aria-label="Projekt-Demo" data-aria-label-de="Projekt-Demo" data-aria-label-en="Project demo">
                 <source src="video/RF_Map_Demo.mp4" type="video/mp4">
-                Your browser does not support the video tag.
+                <span data-de="Ihr Browser unterstützt dieses Video nicht." data-en="Your browser does not support this video.">Ihr Browser unterstützt dieses Video nicht.</span>
             </video>
         </div>
 
-        <h2 data-de="Warum Robot Framework?" data-en="Why Robot Framework?">Why Robot Framework?</h2>
-        <li>
-            <strong data-de="Lesbarkeit:" data-en="Readability:">Readability:</strong>
+        <h2 data-de="Warum Robot Framework?" data-en="Why Robot Framework?">Warum Robot Framework?</h2>
+        <p>
+            <strong data-de="Lesbarkeit:" data-en="Readability:">Lesbarkeit:</strong>
             <span
                 data-de=" Keyword-basierte Tests sind für Nicht-Entwickler (z. B. Product Owner oder manuelle Tester) gut lesbar und reviewbar und verbessern die Zusammenarbeit im Team."
-                data-en=" Keyword-based tests are easy for non-developers (for example product owners or manual testers) to read and review, which improves collaboration across the team.">
-                Keyword-based tests are easy for non-developers (for example product owners or manual testers) to read
-                and review, which improves collaboration across the team.
-            </span>
-        </li>
-        <li>
-            <strong data-de="Erweiterbarkeit:" data-en="Extensibility:">Extensibility:</strong>
+                data-en=" Keyword-based tests are easy for non-developers (for example product owners or manual testers) to read and review, which improves collaboration across the team."> Keyword-basierte Tests sind für Nicht-Entwickler (z. B. Product Owner oder manuelle Tester) gut lesbar und reviewbar und verbessern die Zusammenarbeit im Team.</span>
+        </p>
+        <p>
+            <strong data-de="Erweiterbarkeit:" data-en="Extensibility:">Erweiterbarkeit:</strong>
             <span
                 data-de=" Eigene Python-Libraries erlauben es, die Lösung mit wachsender Komplexität von Navigationssystemen zu erweitern."
-                data-en=" Custom Python libraries allow the solution to grow with increasingly complex navigation systems.">
-                Custom Python libraries allow the solution to grow with increasingly complex navigation systems.
-            </span>
-        </li>
-        <li>
-            <strong data-de="Wartbarkeit:" data-en="Maintainability:">Maintainability:</strong>
+                data-en=" Custom Python libraries allow the solution to grow with increasingly complex navigation systems."> Eigene Python-Libraries erlauben es, die Lösung mit wachsender Komplexität von Navigationssystemen zu erweitern.</span>
+        </p>
+        <p>
+            <strong data-de="Wartbarkeit:" data-en="Maintainability:">Wartbarkeit:</strong>
             <span
                 data-de=" Die Trennung von Testlogik und Testdaten (DDT) ermöglicht es, neue Szenarien mit weniger Änderungen an der Kern-Automatisierung hinzuzufügen und senkt so den langfristigen Wartungsaufwand."
-                data-en=" Separating test logic from test data (DDT) lets you add scenarios with less churn in the core automation, which lowers long-term maintenance effort.">
-                Separating test logic from test data (DDT) lets you add scenarios with less churn in the core
-                automation, which lowers long-term maintenance effort.
-            </span>
-        </li>
+                data-en=" Separating test logic from test data (DDT) lets you add scenarios with less churn in the core automation, which lowers long-term maintenance effort."> Die Trennung von Testlogik und Testdaten (DDT) ermöglicht es, neue Szenarien mit weniger Änderungen an der Kern-Automatisierung hinzuzufügen und senkt so den langfristigen Wartungsaufwand.</span>
+        </p>
 
-        <a href="index.html">← Back</a>
+        <a href="index.html#projects" data-de="← Zurück zu den Projekten" data-en="← Back to projects">← Zurück zu den Projekten</a>
     </section>
-    <script src="script.js?v=20260912"></script>
+    </main>
+    <script src="script.js?v=20260920-stars"></script>
 </body>
 
 </html>
