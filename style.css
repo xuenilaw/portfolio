@@ -1411,3 +1411,122 @@ main > section {
 .chat-panel {
     background: rgba(8, 11, 28, 0.95);
 }
+
+
+/* Reusable case-study card and coordination diagram; no fixed scope-chip count. */
+.case-study-card {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Keep the overview chips close to the introductory sentence. */
+.case-study-card .project-outcome { margin-bottom: 0; }
+.case-study-card .project-chips { margin-block: var(--space-2) var(--space-3); }
+
+.case-study-card .project-links { margin-top: auto; padding-top: var(--space-3); }
+
+.case-study-flow { width: 100%; }
+
+.case-study-lanes {
+    list-style: none;
+    margin: var(--space-2) 0;
+    padding: 0;
+}
+
+.case-study-lanes li {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-4);
+    padding: var(--space-2);
+    border: var(--card-border);
+    border-radius: 0.75rem;
+    background: var(--color-surface);
+    font-size: 0.875rem;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.case-study-lanes li:last-child { margin-bottom: 0; }
+
+.case-study-lanes li:not(:last-child)::after {
+    content: "↕";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--color-accent);
+    line-height: var(--space-4);
+    font-size: 1.25rem;
+}
+
+.case-study-lanes span,
+.case-study-flow-note { color: var(--color-muted); }
+
+.case-study-flow-note { margin-top: var(--space-2); font-size: 0.8125rem; }
+
+@media (max-width: 480px) {
+    .case-study-lanes li { grid-template-columns: 1fr; gap: var(--space-1); }
+}
+
+
+/* Repeatable case-study detail blocks and content-defined stats. */
+.case-study-section {
+    margin-top: var(--space-4);
+    padding-top: var(--space-3);
+    border-top: var(--card-border);
+}
+
+.case-study-section h2 { margin-top: 0; }
+.case-study-section ul { max-width: var(--paragraph-width); }
+
+.case-study-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+    gap: var(--space-2);
+    margin: var(--space-4) 0;
+}
+
+.case-study-stat {
+    padding: var(--space-3);
+    border: var(--card-border);
+    border-radius: var(--card-radius);
+    background: var(--color-surface);
+}
+
+.case-study-stat dt { color: var(--color-muted); font-size: 0.875rem; }
+.case-study-stat dd { margin: var(--space-1) 0 0; font-weight: 600; }
+.case-study-detail .case-study-flow { max-width: 900px; margin-inline: auto; }
+.case-study-detail .case-study-lanes li { padding: var(--space-3); font-size: 1rem; }
+.case-study-detail figcaption { font-weight: 600; margin-bottom: var(--space-3); }
+
+
+/* Extend the overview by adding content-defined case links. */
+.case-study-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.case-study-links li {
+    margin: 0;
+    padding-block: var(--space-3);
+    border-top: var(--card-border);
+}
+
+.case-study-links a {
+    display: block;
+    padding-block: var(--space-1);
+    font-weight: 600;
+    text-underline-offset: 0.25em;
+}
+
+.case-study-links p {
+    margin: var(--space-1) 0 0;
+    color: var(--color-muted);
+    font-size: 0.875rem;
+}
+
+#coordination-title { scroll-margin-top: var(--space-4); }
