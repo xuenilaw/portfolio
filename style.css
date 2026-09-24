@@ -1530,3 +1530,28 @@ main > section {
 }
 
 #coordination-title { scroll-margin-top: var(--space-4); }
+
+
+/* Shared case-study template: visible draft markers and compact scope footer. */
+.case-study-placeholder {
+    padding: var(--space-2);
+    border: 1px dashed var(--color-muted);
+    border-radius: 0.5rem;
+    color: var(--color-muted);
+}
+
+.case-study-resources .project-chips { margin-block: var(--space-2) 0; }
+
+/* Case-study photos retain their full framing on every screen size. */
+.case-study-photo {
+    max-width: 36rem;
+    margin: var(--space-4) auto;
+}
+
+.case-study-photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: var(--card-border);
+    border-radius: var(--card-radius);
+}

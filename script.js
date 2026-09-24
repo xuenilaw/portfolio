@@ -106,6 +106,9 @@ function setLanguage(lang) {
     document.querySelectorAll(`[data-aria-label-${lang}]`).forEach(el => {
         el.setAttribute("aria-label", el.getAttribute(`data-aria-label-${lang}`));
     });
+    document.querySelectorAll(`[data-alt-${lang}]`).forEach(el => {
+        el.setAttribute("alt", el.getAttribute(`data-alt-${lang}`));
+    });
     document.querySelectorAll("[data-language]").forEach(button => {
         button.setAttribute("aria-pressed", String(button.dataset.language === lang));
     });
